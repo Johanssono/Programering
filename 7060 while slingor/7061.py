@@ -12,5 +12,5 @@ while svar != 7:
     elif svar == 69:
         svar = input("Aahhhh, du trodde! ")
     elif svar == 70:
-        svar = input("Nära, men inte rätt, igen! ")
+        svar = inputs("Nära, men inte rätt, igen! ")
 print("grattis, du lyckades slösa bort ditt liv med en värdelös lek")
