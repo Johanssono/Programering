@@ -9,10 +9,10 @@ while svar == "j":
         print(a)
         b = random.randrange(7)
         print(b)
-        while b != a:
-            if b != a:
-                input("Du förlorade, vill du spela igen? j/n ")
-                break
+
+        if b != a:
+            svar = input("Du förlorade, vill du spela igen? j/n ")
+               
         else:
             print ("DU vann, grattis!!")
-            break
+            svar = "n"
