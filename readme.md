@@ -3,3 +3,5 @@ Jag jobbade med mitt sten, sax, påse spel men fick inte programmet att fungera 
 
 ##vecka 2
 antekning, jag fixa klart men hadde problem med att v1 inte körde oändligt utan printade bara "sten,sax,påse" om och om igen. Fixade detta genom att ändra while while "svar == "j" or "ja":" till while "svar == "j" or svar == "ja":" och "if svar == "j" or "ja":" till "if svar == "j" or svar == "ja":"
+
+Jag gjorde sedan en omvandling på ett litet flödesdiagram till kod utan svårigheter.
