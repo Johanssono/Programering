@@ -18,4 +18,4 @@ Jag jobbade med med "for", byde 7095 och 7096. Detta var enkelt och jag stötte 
 
 Vecka 41
 --------------
-Jag lekte runt lite med listor.
+Jag lekte runt lite med listor Och städat i andra koder.
