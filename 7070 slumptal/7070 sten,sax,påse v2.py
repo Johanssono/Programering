@@ -2,8 +2,6 @@ svar = input("Vill du spela ett spel? j/n ")
 
 import random
 
-mylist = ["sten", "sax", "påse"]
-
 
 
 
