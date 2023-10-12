@@ -15,3 +15,7 @@ Jag gjorde sedan en omvandling på ett litet flödesdiagram till kod utan svåri
 Vecka 40
 --------------
 Jag jobbade med med "for", byde 7095 och 7096. Detta var enkelt och jag stötte inte på några svårigheter. Jag undrade dock varför man var tvungen att använda sig av srt och liknande, men fick frågat det på lektionen och förstår varför.
+
+Vecka 41
+--------------
+Jag lekte runt lite med listor.
