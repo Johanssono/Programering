@@ -18,4 +18,8 @@ Jag jobbade med med "for", byde 7095 och 7096. Detta var enkelt och jag stötte 
 
 Vecka 41
 --------------
-Jag lekte runt lite med listor Och städat i andra koder.
+Jag lekte runt lite med listor Och städat i andra koder. Jag gjorde lite övningar med alla kommandon. Jag glömde doch vad mer jag gjorde och glömde skriva ner det.
+
+Vacka 42
+--------------
+Jag skrev en kod som kastade 10 tärningar och sparade dessa värden i en lista. Sedan presenterade koden största/minsta värde, summan, medelvärdet, hur många sexor och vilket tal som var vanligast. Använde mig först av listor för att få ut det vanligaste talet, deta skrev dock inte ut vilket som var det vanligaste men istället hur många av det vanligast som slogs. Jag ska därför försöka göra på ett annat mer kompremerat sätt för att få det resultat jag vill ha.
