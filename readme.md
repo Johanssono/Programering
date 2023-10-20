@@ -23,3 +23,5 @@ Jag lekte runt lite med listor Och städat i andra koder. Jag gjorde lite övnin
 Vacka 42
 --------------
 Jag skrev en kod som kastade 10 tärningar och sparade dessa värden i en lista. Sedan presenterade koden största/minsta värde, summan, medelvärdet, hur många sexor och vilket tal som var vanligast. Använde mig först av listor för att få ut det vanligaste talet, deta skrev dock inte ut vilket som var det vanligaste men istället hur många av det vanligast som slogs. Jag ska därför försöka göra på ett annat mer kompremerat sätt för att få det resultat jag vill ha.
+
+Jag upptäckte att min kod inte skriver vilket tal som är vanligast utan hur många det var av dem. Jag fick nu förklarat för mid hur koden Rikard skrev fungerar och det löser mitt problem. Med hjälp av Rikards kod skapade jag en liten egen kod med lite skillnader från rikads kod, detta så att den fungerar till den långa koden jag skrev för att räkna ut största talet.

@@ -35,17 +35,19 @@ print("Antal sexor: ", antalsexor)
 
 antal = [0, 0, 0, 0, 0, 0, 0] # antal 0, antal 1, antal 2, ...
 
-
 """
 for tal in l:
     antal[tal] += 1
 print(antal)
 
 maximum = max(antal)
-plats = antal.index(maximum) 
+plats = antal.index(maximum)
+print (plats)
 """
 
-# Ska försöka få den att räkna det vanligaste värdet på ett enklare sätt, 
+# for tal in l: | är en for loop som går igenom varge tal i listan l.
+# antal[tal] += 1 | skapar en lista vid namn "antal" och kollar så att varge nummer i listan "l" stämmer överäns med sin plats i listan. listan har indexen 0, 1, 2 osv upp till index 6. Om ett ett tal i listan "l" har värdet 4 så kommer listan "antal" att öka med 1 på index fyra. Så för varge 4 i listan "l" kommer index 4 på listan "antal" att öka med 1. På samma sätt kommer index 5 i listan "antal" att öka med 1 för varge 5,a i listan "l".
+
 
 
 antalfyror = 0
@@ -72,6 +74,10 @@ for tal in l:
     if (tal == 1):
         antalettor = antalettor + 1
 
-list = [antalsexor, antalfemmor, antalfyror, antaltreor, antaltvåor, antalettor]
+list = [antalettor, antaltvåor, antaltreor, antalfyror, antalfemmor, antalsexor]
 
-print("vanligaste talet: ", max(list))
+print(list)
+maximalt = max(list)
+test = list.index(maximalt)
+test = test + 1
+print (test)
