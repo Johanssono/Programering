@@ -1,8 +1,15 @@
 Logbok
 ==============
 
+Vecka 45
+--------------
+Jag har jobbat med listor och deffinitioner Jag gjord inte så mycket mer än att testa runk och försöka förstå hur det fungerade, men verkar kunna det nu. Jag har även börjat att arbeta med en kod som låter en välja mellan vilka enheter man vill konvertera mellan men han inte klart med att få det och fungera. Jag har även använt mig av väldigt många "if"/"elif" för att skapa koden och ska nästa gång kolla om jag kan göra det snyggare på ett annat sätt. men den är som sagt inte klar.
 
-Vecka 42
+Vecka 44
+--------------
+LOV
+
+Vecka 43
 --------------
 Jag övade lite inför prov 7 och testade koderna till provet, sedan skulle jag texta att kolla på uppgiften (printa alla primtal upp till 100) i uppgift 7100. Men jag förstod inte hur jag skulle göra. Jag googlade men hittade inte direkt ett sätt att börja. Jag googlade sedan upp ett svar för att försöka förså hur koden fungerade då koden använde sig av funktioner jag inte använt än. Hittade koden på: https://stackoverflow.com/questions/15963707/python-displays-all-of-the-prime-numbers-from-1-through-100. Jag gick sedan igenom koden med Rikard för att förstå hur den fungerar och tror jag gör det nu. Jag lärde mig lite om hur man använder "true" och "false". Skulle vilja testa om jag kan lösa det nästa gång med vad jag har lärt mig idag.
 
