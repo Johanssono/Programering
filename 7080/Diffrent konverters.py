@@ -1,44 +1,49 @@
 print ("Hej, vilken enhetskonverterare vill du använda?")
 svar = input(" 1: C -> F, 2: C -> K, 3: F -> C, 4: F -> K, 5: K -> C, 6: K -> F?")
 
+svar = int(svar)
+
 if svar == 1:
-    def celciustofarenhite(C):   
+    def celciustofarenhight(C):   
         F = (9/5) * C + 32
         return F
-        a = float(input("skriv temperatur i celcius: ")) 
-        print (celciustofarenhite(a))
+    a = float(input("skriv temperatur i celcius: ")) 
+    print (celciustofarenhight(a))
 
 elif svar == 2:
     def celciustokelvin(C):
-        K = C + 237.15
+        K = C + 273.15
         return K
-        a = float(input("Skriv temperatur i celcius: "))
-        print(celciustokelvin(a))
+    a = float(input("Skriv temperatur i celcius: "))
+    print(celciustokelvin(a))
 
 elif svar == 3:
-    def farenhitetocelcius(F):
-        C = (5/9) * F -32
+    def farenhighttocelcius(F):
+        C = (F - 32) / (9/5)
+
+        #måste göra om alla dessa formler till korekt, den ovanför är korekt gjord matematiskt, men inte testad i kod.
+
         return C
-        a = float(input("Skriv temperatur i farenhite: "))
-        print (farenhitetocelcius(a))
+    a = float(input("Skriv temperatur i farenhight: "))
+    print (farenhighttocelcius(a))
 
 elif svar == 4:
-    def farenhitetokelvin(F):   
-        K = ((5/9) * F -32) + 237.15
+    def farenhighttokelvin(F):   
+        K = ((5/9) * F -32) + 273.15
         return F
-        a = float(input("skriv temperatur i celcius: ")) 
-        print (farenhitetokelvin(a))
+    a = float(input("skriv temperatur i farenhight: ")) 
+    print (farenhighttokelvin(a))
 
 elif svar == 5:
     def kelvintocelcius(K):
-        C = K - 237.15
+        C = K - 273.15
         return K
-        a = float(input("Skriv temperatur i celcius: "))
-        print(kelvintocelcius(a))
+    a = float(input("Skriv temperatur i kelvin: "))
+    print(kelvintocelcius(a))
 
-else svar == 6: 
-    def kelvintofarenhite(K):
-        F = ((9/5) * C + 32) - 237.15
+else: 
+    def kelvintofarenhight(K):
+        F = ((9/5) * C + 32) - 273.15
         return C
-        a = float(input("Skriv temperatur i farenhite: "))
-        print (kelvintofarenhite(a))
+    a = float(input("Skriv temperatur i kelvin: "))
+    print (kelvintofarenhight(a))

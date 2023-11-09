@@ -6,7 +6,7 @@ import random
 
 
 
-while svar =="j" or svar == "ja":
+while svar == "j" or svar == "ja":
     if svar == "j" or svar == "ja":
         svar = input("sten! sax! påse!... ")
         
