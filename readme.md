@@ -1,9 +1,15 @@
 Logbok
 ==============
 
+vecka 46
+--------------
+Jag har gjort färdigt min kod med olika konverterare och har nu börjat arbeta på en kod som ska översätta text till rövarspråket. Om tid och ork finns vill jag även göra så att man kan översätta rövarspråket till vanlig text.
+
+Jag vet dock inte riktigt hur jag ska få koden att kolla om bokstäverna i ett ord matchar listan med konsonanter och sedan lägga till den röverfierade varianten i "rövar_svar" om bokstaven är en konsonant.
+
 Vecka 45
 --------------
-Jag har jobbat med listor och deffinitioner Jag gjord inte så mycket mer än att testa runk och försöka förstå hur det fungerade, men verkar kunna det nu. Jag har även börjat att arbeta med en kod som låter en välja mellan vilka enheter man vill konvertera mellan men han inte klart med att få det och fungera. Jag har även använt mig av väldigt många "if"/"elif" för att skapa koden och ska nästa gång kolla om jag kan göra det snyggare på ett annat sätt. men den är som sagt inte klar.
+Jag har jobbat med listor och deffinitioner i mapp 7080. Jag gjord inte så mycket mer än att testa runk och försöka förstå hur det fungerade, men verkar kunna det nu. Jag har även börjat att arbeta med en kod som låter en välja mellan vilka enheter man vill konvertera mellan men han inte klart med att få det och fungera. Jag har även använt mig av väldigt många "if"/"elif" för att skapa koden och ska nästa gång kolla om jag kan göra det snyggare på ett annat sätt. men den är som sagt inte klar.
 
 Jag har fortsatt med arbetet på min kenvertetringskod men lyckades inte komma så långt, jag fastnade i att omvandla formeln från celcius till farenhight så att den gick åt andra hållet. Jag kom därför ingnstans idag.
 
