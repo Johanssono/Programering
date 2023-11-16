@@ -1,24 +1,15 @@
-import random
+lista = [2, 3, 2, 4, 1]
 
-tal = random.randint(1, 6)
+lista.remove(2)
 
-a = 10
+lista.insert(2, 5)
 
-lista = []
+lista.remove(1)
 
-while a > 0:
-    b = random.randint(1, 6)
+lista.append(6)
 
-    lista.append(b)
+print(sum(lista)/len(lista))
 
-    a = a - 1
+lista.sort()
 
 print(lista)
-
-d = 0
-
-for k in lista:
-    if k == 3:
-        d = d + 1
-
-print(d)
