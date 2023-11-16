@@ -1,15 +1,24 @@
-lista = [2, 3, 2, 4, 1]
+import random
 
-lista.remove(2)
+a = 20
 
-lista.insert(2, 5)
+lista = []
 
-lista.remove(1)
+while a > 0:
+    tal = random.randint(1,6)
 
-lista.append(6)
+    lista.append(tal)
 
-print(sum(lista)/len(lista))
+    a = a - 1
 
-lista.sort()
+b = 0
+
+for i in lista:
+    if i == 3:
+        b = b + 1
 
 print(lista)
+
+print(b)
+
+lista.pop(4)
