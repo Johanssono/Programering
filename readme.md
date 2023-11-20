@@ -1,6 +1,10 @@
 Logbok
 ==============
 
+vecka 47
+--------------
+Jag har börjat jobba med dictionary och har börjat med en kod där man skriver in ett ord på valfritt språk och sedan en översättning av det ordet på svenska, om först ordet man skrev in var på svenska får man välja valfritt språk på andra ordet. Jag vet dock inte riktigt hur jag ska göra för att få in det i en fungerande loop, men det borde vara lätt löst nästa gång.
+
 vecka 46
 --------------
 Jag har gjort färdigt min kod med olika konverterare och har nu börjat arbeta på en kod som ska översätta text till rövarspråket. Om tid och ork finns vill jag även göra så att man kan översätta rövarspråket till vanlig text.
