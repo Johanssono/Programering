@@ -1,6 +1,10 @@
 Logbok
 ==============
 
+vecka 48
+--------------
+Jag började med att skriva kod till ett Jatzy, jag lyckades inte komma så långt, utan lyckades bara göra en kod för att skriva in hur många spelare som ska spela och sedan vad dessa spelare ska heta. Nästa gång får jag nog läsa mig in på klasser för att kunna gå vidar med uppgiften.
+
 vecka 47
 --------------
 Jag har börjat jobba med dictionary och har börjat med en kod där man skriver in ett ord på valfritt språk och sedan en översättning av det ordet på svenska, om först ordet man skrev in var på svenska får man välja valfritt språk på andra ordet. Jag vet dock inte riktigt hur jag ska göra för att få in det i en fungerande loop, men det borde vara lätt löst nästa gång.
