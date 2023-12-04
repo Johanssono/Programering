@@ -1,6 +1,10 @@
 Logbok
 ==============
 
+vecka 49
+--------------
+Jag hade inte fixat allting med min nya skoldator och var tvungen att lägga hela lektionen på att ladda ner vs codium och annat för att få allting att fungera. Nästa lektion ska jag göra prov och en lista med måla gällande mitt projekt.
+
 vecka 48
 --------------
 Jag började med att skriva kod till ett Jatzy, jag lyckades inte komma så långt, utan lyckades bara göra en kod för att skriva in hur många spelare som ska spela och sedan vad dessa spelare ska heta. Nästa gång får jag nog läsa mig in på klasser för att kunna gå vidar med uppgiften.
