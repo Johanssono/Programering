@@ -1,9 +1,16 @@
 Logbok
 ==============
 
+
 vecka 49
 --------------
-Jag hade inte fixat allting med min nya skoldator och var tvungen att lägga hela lektionen på att ladda ner vs codium och annat för att få allting att fungera. Nästa lektion ska jag göra prov och en lista med måla gällande mitt projekt.
+Jag hade inte fixat allting med min nya skoldator och var tvungen att lägga hela lektionen på att ladda ner vs codium och annat för att få allting att fungera. Jag lyckades med prov 10, skrivit en lista på vad jag ska göra och pratade ideer med Rickard, jag ska kolla på dictionaries nästa gång.
+
+0. Jag ska skapa en kod där en spelare kan spela yatzy.
+0. Jag ska göra så att programet har koll på vilka tärningar som spelaren väljer att spara vid varge kast.
+0. Jag ska göra så att programet har koll på vilka saker som spelaren fått poäng i och vilka saker som är strukna
+
+
 
 vecka 48
 --------------
