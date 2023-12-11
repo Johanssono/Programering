@@ -1,6 +1,9 @@
 Logbok
 ==============
 
+vecka 50
+--------------
+Jag har nu skrivit en kod som skapar en spelare och kastar tärningar, jag ska dock ändra nästa gång hur programmet frågar vilka träningar som ska sparas och sedan göra om koden som kastar de soparade tärningar då det hamnade i en evighets loop. Det var rätt svårt att få en idée och komma igång med hur man ska göra men mycket enklare när man väl började.
 
 vecka 49
 --------------
@@ -9,7 +12,7 @@ Jag hade inte fixat allting med min nya skoldator och var tvungen att lägga hel
 0. Jag ska skapa en kod där en spelare kan spela yatzy.
 0. Jag ska göra så att programet har koll på vilka tärningar som spelaren väljer att spara vid varge kast.
 0. Jag ska göra så att programet har koll på vilka saker som spelaren fått poäng i och vilka saker som är strukna
-
+0. skapa så att programmet frågar vilka siffror som spelaren vill spara och att spelaren akn skriva in flera värden avskillda av ett mellanrumm som svar till frågan ( använd lista till detta)
 
 
 vecka 48
