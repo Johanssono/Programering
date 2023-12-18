@@ -1,7 +1,7 @@
 Logbok
 ==============
 
-vecka 50
+vecka 51
 --------------
 Jag fixade med while loopen som skulle låta spelaren kasta tärningarna 3 gånger och spara dem i olika listor, behöver fortsätta jobba med den nästa gång och behöver fixa så att spelaren kan ta bort saker från listan med sparade tärningar och spara olika kombinatniner av tärningar så som stege/kåk. Det var svårt att lyckas fixa while loopen så att den fungerar utan att använda en onödigt stor mängd kod.
 
