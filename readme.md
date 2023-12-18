@@ -3,6 +3,10 @@ Logbok
 
 vecka 50
 --------------
+Jag fixade med while loopen som skulle låta spelaren kasta tärningarna 3 gånger och spara dem i olika listor, behöver fortsätta jobba med den nästa gång och behöver fixa så att spelaren kan ta bort saker från listan med sparade tärningar och spara olika kombinatniner av tärningar så som stege/kåk. Det var svårt att lyckas fixa while loopen så att den fungerar utan att använda en onödigt stor mängd kod.
+
+vecka 50
+--------------
 Jag har nu skrivit en kod som skapar en spelare och kastar tärningar, jag ska dock ändra nästa gång hur programmet frågar vilka träningar som ska sparas och sedan göra om koden som kastar de soparade tärningar då det hamnade i en evighets loop. Det var rätt svårt att få en idée och komma igång med hur man ska göra men mycket enklare när man väl började.
 
 vecka 49
