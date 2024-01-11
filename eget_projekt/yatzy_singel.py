@@ -2,7 +2,6 @@ import random
 
 player = []
 dice = []
-saved = []
 antal = 5
 
 
@@ -12,42 +11,42 @@ player.append(namn)
 svar = input("Vill du spela ett spel? j/n: ")
 
 if svar == "j":
-
+    antal = 0
     kast = 3
     while kast > 0:
         
         kasta = input("Vill du kasta tärningarna? j/n: ")
         
         while kasta == "j":
-            while antal > 0:
+            while antal < 5:
                 tärning = random.randrange(1, 7)
                 dice.append(tärning)
-                antal = antal - 1
+                antal = antal + 1
 
             print(dice)
 
             spara = int(input("vilka vill du spara? 1, 2, 3, 4, 5 eller 6: "))
 
             for tal in dice:
-                if (tal == spara):
-                    saved.append(tal)
-                else:
+                if (tal != spara):
                     dice.remove(tal)
 
-            print(saved)
+            print("sparade tärningarx: ", dice)
             
-            delete = int(input("Vill du ta bort några? 1, 2, 3, 4, 5 eller 6: "))
+            remove_dice = input("Vill du ta bort några tärningar? j/n: ")
 
-            for tal in saved:
-                if (tal == delete):
-                    delete.remove(tal)
-                    delete.remove(tal)
+            if remove_dice == "j":
+                delete = int(input("1, 2, 3, 4, 5 eller 6? "))
+                for tal in saved:
+                    if (tal == delete):
+                        delete.remove(tal)
+                        delete.remove(tal)
 
             print(dice)
-            antal = 5 - len(dice)
+            antal = len(dice)
             kasta = input("Vill du kasta tärningarna? j/n: ")
             
-        kast = kast - 1
+            kast = kast - 1
 
 else:
     print("hej då")

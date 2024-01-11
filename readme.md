@@ -1,5 +1,8 @@
 Logbok
 ==============
+vecka 2
+--------------
+Jag jobbade med att försöka sätta mig in i arbetet igen. Jag hade problemet att när jag skulle spara tärningar och ta bort de tärningar som inte skulle sparas, hoppar listan över det andra talet om två tal som ska bort är direkt efter varandra. Jag googlade men hittade ingen smidig lösning på problemet, tills jag kom på att jag kan ta bort listan med sparade tärningar och endast göra så att de tärningar som ska bort försvinner. Jag fixade även med hur man skulle ta bort tärningar om man ville och sedan kasta om tärningarna. Nu tror jag att allting fungerar som det ska men måste testa nästa gång om koden fungerar när man kastar 3 gånger i rad då jag inte han det denna veckan.
 
 vecka 51
 --------------
