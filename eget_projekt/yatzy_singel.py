@@ -3,6 +3,7 @@ import random
 player = []
 dice = []
 antal = 5
+saved = []
 
 
 namn = input("Skriv namn på spelare: ")
@@ -25,21 +26,33 @@ if svar == "j":
 
             print(dice)
 
-            spara = int(input("vilka vill du spara? 1, 2, 3, 4, 5 eller 6: "))
+            save_dice = input("Vill du spara några tärningar? j/n: ")
 
-            for tal in dice:
-                if (tal != spara):
-                    dice.remove(tal)
+            while save_dice == "j":
+                print(dice)
+                save = int(input("vilka vill du spara? 1, 2, 3, 4, 5 eller 6: "))
+                for i in range(dice.len()-1, 0, -1):
+                    if dice[i] == save:
+                        saved.append(save)
+                        dice.remove(save)
+                '''
+                for tal in dice:
+                    if (tal == save):
+                        saved.append(tal)
+                        dice.remove(tal)
+                '''
+                print(dice)
+                save_dice = input("Vill du spara några fler tärningar? j/n: ")
+
 
             print("sparade tärningarx: ", dice)
             
             remove_dice = input("Vill du ta bort några tärningar? j/n: ")
 
             if remove_dice == "j":
-                delete = int(input("1, 2, 3, 4, 5 eller 6? "))
-                for tal in saved:
+                delete = input("1, 2, 3, 4, 5 eller 6? ")
+                for tal in dice:
                     if (tal == delete):
-                        delete.remove(tal)
                         delete.remove(tal)
 
             print(dice)
