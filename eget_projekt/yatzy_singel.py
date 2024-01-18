@@ -31,29 +31,52 @@ if svar == "j":
             while save_dice == "j":
                 print(dice)
                 save = int(input("vilka vill du spara? 1, 2, 3, 4, 5 eller 6: "))
-                for i in range(dice.len()-1, 0, -1):
+
+                
+                for i in range(len(dice) -1, 0, -1):
                     if dice[i] == save:
                         saved.append(save)
                         dice.remove(save)
+
+                        '''
+                        Denna for slinga kollar igenom listan "dice" och lägger in dem i 
+                        listan "saved", men for slingan kollar igenom listan "dice" backlänges 
+                        för att int ändra index-värdet hos objekten i listan och garantera att 
+                        alla bjekt av samma värde tas bort oavsätt index
+                        '''
+
+
                 '''
                 for tal in dice:
                     if (tal == save):
                         saved.append(tal)
                         dice.remove(tal)
+
+                tidigare försök till att skapa en aoutomatiserad lista som tar bort och lägger in vald tärning
                 '''
                 print(dice)
                 save_dice = input("Vill du spara några fler tärningar? j/n: ")
 
-
-            print("sparade tärningarx: ", dice)
+            print("sparade tärningar: ", saved)
             
             remove_dice = input("Vill du ta bort några tärningar? j/n: ")
 
-            if remove_dice == "j":
+
+
+            while remove_dice == "j":
                 delete = input("1, 2, 3, 4, 5 eller 6? ")
                 for tal in dice:
                     if (tal == delete):
                         delete.remove(tal)
+                
+                print("sparade tärningar: ", saved)
+            
+                remove_dice = input("Vill du ta bort några tärningar? j/n: ")
+
+            dice = []
+
+
+            dice.extend(saved)
 
             print(dice)
             antal = len(dice)

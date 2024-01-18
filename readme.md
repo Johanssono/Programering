@@ -5,6 +5,10 @@ vecka 3
 --------------
 Jag satt och jobbade skoningslöst med min kod för att lösa ett specifikt problem med while-slingan som skulle ta bort de sparade tärningarna från listan. Om två ombjekt som skulle tas bort var direkt efter varandra hopade for-slingan över det andra objektet då den fick samma ett nytt index som var samma som den som precis togs bort. Sedan råkade en olycka hända som tog bort all den kod jag skrivit på lektionen, men jag skrev snabbt tillbacka koden då jag viste hur det skulle se ut och sedan hjälpte rickard mig att vända på for-slingan som skulle ta bort objekt så inga objekt byter index.
 
+Jag fixade problemet med att låta spelaren spara flera olika tärningar och sedan gjorde jag så att dem tärningar som inte sparades kastades om och sedan får spelaren välja igen mellan de nya tärningarna och dem som spelaren sparade föra kastet. Jag gjorde även så att spelaren kan välja att ta bort tärningar från dem hen sparade och kasta om dem. Spelaren kan reperera allt detta i tre kast.
+
+Nästa gång kan jag nog börja fixa med att göra så att spelaren kan lägga in dem sparade tärningarna i ett poängsystem och stryka saker om dem misslyckas.
+
 vecka 2
 --------------
 Jag jobbade med att försöka sätta mig in i arbetet igen. Jag hade problemet att när jag skulle spara tärningar och ta bort de tärningar som inte skulle sparas, hoppar listan över det andra talet om två tal som ska bort är direkt efter varandra. Jag googlade men hittade ingen smidig lösning på problemet, tills jag kom på att jag kan ta bort listan med sparade tärningar och endast göra så att de tärningar som ska bort försvinner. Jag fixade även med hur man skulle ta bort tärningar om man ville och sedan kasta om tärningarna. Nu tror jag att allting fungerar som det ska men måste testa nästa gång om koden fungerar när man kastar 3 gånger i rad då jag inte han det denna veckan.
