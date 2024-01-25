@@ -1,6 +1,14 @@
 Logbok
 ==============
 
+vecka 4
+--------------
+Jag har fixat så att funktionen (for i in range(len(dice) -1, -1, -1):) kan analysera alla tärningar i listan, detta gjorde jag genom att ändra funktionen från for i in range(len(dice) -1, 0, -1): till for i in range(len(dice) -1, -1, -1):. Ändringen av värdet 0 till 1 gör att funktionen räknar listan från index värde -1 och går ned med 1 steg fram till index -1, vilket gör att den även analyserar index 0 vilket den hopade innan.
+
+Jag har dock fått problem med att funktionen while kast > 0: inte fungerar och gör så att spelare kan kasta hur många gånger som hällst. detta borde vara ett lätt problem att lösa men hade inte tid, det får bli till nästa gång. 
+
+Jag ska snart börja på poängsystemet som är i yatzy.
+
 vecka 3
 --------------
 Jag satt och jobbade skoningslöst med min kod för att lösa ett specifikt problem med while-slingan som skulle ta bort de sparade tärningarna från listan. Om två ombjekt som skulle tas bort var direkt efter varandra hopade for-slingan över det andra objektet då den fick samma ett nytt index som var samma som den som precis togs bort. Sedan råkade en olycka hända som tog bort all den kod jag skrivit på lektionen, men jag skrev snabbt tillbacka koden då jag viste hur det skulle se ut och sedan hjälpte rickard mig att vända på for-slingan som skulle ta bort objekt så inga objekt byter index.

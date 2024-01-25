@@ -29,11 +29,12 @@ if svar == "j":
             save_dice = input("Vill du spara några tärningar? j/n: ")
 
             while save_dice == "j":
+
                 print(dice)
                 save = int(input("vilka vill du spara? 1, 2, 3, 4, 5 eller 6: "))
 
                 
-                for i in range(len(dice) -1, 0, -1):
+                for i in range(len(dice) -1, -1, -1):
                     if dice[i] == save:
                         saved.append(save)
                         dice.remove(save)
@@ -75,14 +76,15 @@ if svar == "j":
 
             dice = []
 
-
             dice.extend(saved)
-
+            
             print(dice)
             antal = len(dice)
             kasta = input("Vill du kasta tärningarna? j/n: ")
-            
             kast = kast - 1
+
+            if kast > 0:
+                saved = []
 
 else:
     print("hej då")
