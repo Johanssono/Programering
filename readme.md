@@ -1,6 +1,15 @@
 Logbok
 ==============
 
+vecka 6
+--------------
+Jag han inte så mycket denna veckan då vi gjorde scratch och jag satt och bollade ideer mer Ronnie hur jag ska göra med tabellen nästa gång.
+
+vecka 5
+--------------
+Denna veckan övade vi på scratch.
+
+
 vecka 4
 --------------
 Jag har fixat så att funktionen (for i in range(len(dice) -1, -1, -1):) kan analysera alla tärningar i listan, detta gjorde jag genom att ändra funktionen från for i in range(len(dice) -1, 0, -1): till for i in range(len(dice) -1, -1, -1):. Ändringen av värdet 0 till 1 gör att funktionen räknar listan från index värde -1 och går ned med 1 steg fram till index -1, vilket gör att den även analyserar index 0 vilket den hopade innan.
