@@ -4,6 +4,7 @@ player = []
 dice = []
 antal = 5
 saved = []
+table = ["Ettor?" /n,"Tvåor?" /n, "Treor?" /n,"Fyror?" /n,"Femmor?" /n,"Sexor" /n,"Par" /n,"Två Par" /n,"Triss" /n,"Fyrtal" /n,"Kåk" /n,"Liten stege" /n,"Stor Stege" /n,"Chans" /n,"Yatzy"]
 
 
 namn = input("Skriv namn på spelare: ")
@@ -13,8 +14,8 @@ svar = input("Vill du spela ett spel? j/n: ")
 
 if svar == "j":
     antal = 0
-    kast = 3
-    while kast > 0:
+    throw = 3
+    while throw > 0:
         
         kasta = input("Vill du kasta tärningarna? j/n: ")
         
@@ -81,10 +82,20 @@ if svar == "j":
             print(dice)
             antal = len(dice)
             kasta = input("Vill du kasta tärningarna? j/n: ")
-            kast = kast - 1
+            throw = throw - 1
 
-            if kast > 0:
+            if throw > 0:
                 saved = []
+
+            else:
+                print(dice)
+                print(table)
+                
+
+            
+
+
+
 
 else:
     print("hej då")
