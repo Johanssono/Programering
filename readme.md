@@ -1,6 +1,20 @@
 Logbok
 ==============
 
+
+Vecka 9
+--------------
+Jag bollade med vikarien och kom fram till att jag kan skapa ett programm som utifrån innehållet på listan med tärningar, kollar vilka kriterier som tärningarna uppfyller och ger sedan spelaren alternativen som spelaren kan lägga poängen på, till exempel 2 par eller kåk. Jag ska sedan skriva ett program som kollar vilka poäng som spelaren får beroende på vart hen väljer att lägga poängen och sedan tar bort detta alternativet så att spelaren inte kan lägga poängen där igen. Detta ska jag sedan modifiera så att flera spelare kan spela.
+
+jag måste även skriva en kod som tar bort ett alternativ om spelarens tärningar inte uppfyller några krav.
+
+Men jag ska snacka med Rickard om han tycker att jag ska göra det objektorienterat eller om jag även kan få A utan.
+
+
+Vecka 8
+--------------
+Jag jobbade med att förska lära mig objekt orienterad programering och ska fortsätta med detta.
+
 vecka 6
 --------------
 Jag han inte så mycket denna veckan då vi gjorde scratch och jag satt och bollade ideer mer Ronnie hur jag ska göra med tabellen nästa gång.
@@ -8,7 +22,6 @@ Jag han inte så mycket denna veckan då vi gjorde scratch och jag satt och boll
 vecka 5
 --------------
 Denna veckan övade vi på scratch.
-
 
 vecka 4
 --------------
