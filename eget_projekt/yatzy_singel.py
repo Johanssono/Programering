@@ -4,8 +4,14 @@ player = []
 dice = []
 antal = 5
 saved = []
-table = ["Ettor?" /n,"Tvåor?" /n, "Treor?" /n,"Fyror?" /n,"Femmor?" /n,"Sexor" /n,"Par" /n,"Två Par" /n,"Triss" /n,"Fyrtal" /n,"Kåk" /n,"Liten stege" /n,"Stor Stege" /n,"Chans" /n,"Yatzy"]
-
+table = ["Ettor", "Tvåor", "Treor", "Fyror", "Femmor", "Sexor", "Par", "Två Par", "Triss", "Fyrtal", "Kåk", "Liten stege", "Stor Stege", "Chans", "Yatzy"]
+choices = []
+poäng_ettor = []
+poäng_tvåor = []
+poäng_treor = []
+poäng_fyror = []
+poäng_femmor = []
+poäng_sexor = []
 
 namn = input("Skriv namn på spelare: ")
 player.append(namn)
@@ -81,21 +87,116 @@ if svar == "j":
             
             print(dice)
             antal = len(dice)
-            kasta = input("Vill du kasta tärningarna? j/n: ")
             throw = throw - 1
 
             if throw > 0:
                 saved = []
+                kasta = input("Vill du kasta tärningarna? j/n: ")
+
 
             else:
+                dice.sorty()
                 print(dice)
                 print(table)
-                
-
             
 
+#En lista med alla olika poängalternativ,
+#koden ska kolla listan med tärningar och sedan utesluta dalternativ från listan med poäng alternativ.
+#Detta genom att kolla vilka slags tärningar som listan med resulterande tärningar inehåller.
 
+#sedan ska programet visa dessa utvalda alternativ för spelaren och låta spelaren välja ett av alternativen
+#Om programmet bedömer att det inte finns några alternativ som faller samman med tärningarna,
+#ska programmet föra fram en lista med de återstående alternativen och låta spelaren stryka ett alternativ.
 
+#När ett alternativ är valt eller struket, ska listan ta bort detta alternativ och spara det i den slutgiltiga listan.
+#Sedan ska spelaren presenteras med den slutgiltiga listan och summan av poängen.
+
+    for siffra in dice:
+        if siffra == 1:
+            for alternativ in table:
+                if alternativ == "Ettor":
+                    choices.append("1. Ettor")
+
+        elif siffra == 2:
+            for alternativ in table:
+                if alternativ == "Tvåor":
+                    choices.append("2. Tvåor")
+        
+        elif siffra == 3:
+            for alternativ in table:
+                if alternativ == "Treor":
+                    choices.append("3. Treor")
+        
+        elif siffra == 4:
+            for alternativ in table:
+                if alternativ == "Fyror":
+                    choices.append("4. Fyror")
+        
+        elif siffra == 5:
+            for alternativ in table:
+                if alternativ == "Femmor":
+                    choices.append("5. Femor")
+        
+        elif siffra == 6:
+            for alternativ in table:
+                if alternativ == "Sexor":
+                    choices.append("6. Sexor")
+
+        elif siffra > 0:
+            choices.append("\n")
+        
+        elif siffra > 0:
+            choices.append("\n")
+
+        print(choices)
+
+        sattsning = input("Skriv siffran på alternativet du önskar välja")
+
+        if sattsning == 1:
+            table.remove("Ettor")
+            for etta in dice:
+                if etta == 1:
+                    poäng_ettor.append(1)
+            poäng_ettor = sum(poäng_ettor)
+
+        elif sattsning == 2:
+            table.remove(Tvåor)
+            for tvåa in dice:
+                if tvåa == 2:
+                    poäng_tvåor.append(2)
+            poäng_tvåor = sum(poäng_tvåor)
+
+        elif sattsning == 3:
+            table.remove(Treor)
+            for tvåa in dice:
+                if etta == 3:
+                    poäng_tvåor.append(3)
+            poäng_treor = sum(poäng_treor)
+
+        elif sattsning == 4:
+            table.remove(Fyror)
+            for tvåa in dice:
+                if etta == 4:
+                    poäng_tvåor.append(4)
+            poäng_fyror = sum(poäng_fyror)
+
+        elif sattsning == 5:
+            table.remove(Femmor)
+            for tvåa in dice:
+                if etta == 5:
+                    poäng_tvåor.append(5)
+            poäng_femmor = sum(poäng_femmor)
+
+        elif sattsning == 6:
+            table.remove(Sexor)
+            for tvåa in dice:
+                if etta == 6:
+                    poäng_tvåor.append(6)
+            poäng_sexor = sum(poäng_sexor)
+
+        
+        
+        
 
 else:
     print("hej då")

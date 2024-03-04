@@ -2,6 +2,25 @@ Logbok
 ==============
 
 
+
+Vecka 10
+--------------
+Jag har skapat en kod som teoretiskt kollar igenom tärningarna och kollar om det finns tillgängliga alternativ mellan 1-6 som spelaren kan ta. sedan visar koden spelaren listan med tillgängliga alternativ och låter spelaren välja vart poängen ska läggas. Sedan läggs alla poäng i en lista fr det specifika valet och summeras.
+
+nästa gång ska jag testa att koden och även förbätttra systemet. Sedan ska jag komma på ett sätt att avgöra om spelaren med sina träningar kan välja mer speciella poängalternativ som kåk och stege.
+
+https://www.w3schools.com/python/python_operators.asp
+https://www.markdownguide.org/cheat-sheet/
+
+Jag använde dessa två länkar för att kolla hur man gjorde \n respektive lista i markdown.
+
+Lista
+--------------
+-Jag ska skapa en kod som söker ut vilka poäng alternativ man har möjligheten att välja och sedan spara poängen i valt alternativ.
+-Jag ska skriva en kod som låter en välja ett poäng alternativ att stryka om det inte finns alternativ att välja mellan som passar ens tärningar.
+-Jag ska fixa så koden visar summan av alla poäng och resultatet av spelet.
+-Jag ska eventuellt även fixa så att man kan spela flera spelare.
+
 Vecka 9
 --------------
 Jag bollade med vikarien och kom fram till att jag kan skapa ett programm som utifrån innehållet på listan med tärningar, kollar vilka kriterier som tärningarna uppfyller och ger sedan spelaren alternativen som spelaren kan lägga poängen på, till exempel 2 par eller kåk. Jag ska sedan skriva ett program som kollar vilka poäng som spelaren får beroende på vart hen väljer att lägga poängen och sedan tar bort detta alternativet så att spelaren inte kan lägga poängen där igen. Detta ska jag sedan modifiera så att flera spelare kan spela.
