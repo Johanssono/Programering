@@ -95,7 +95,7 @@ if svar == "j":
 
 
             else:
-                dice.sorty()
+                dice.sort()
                 print(dice)
                 print(table)
             
