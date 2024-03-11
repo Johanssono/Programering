@@ -21,6 +21,10 @@ Jag har skapat en kod som teoretiskt kollar igenom tärningarna och kollar om de
 
 nästa gång ska jag testa att koden och även förbätttra systemet. Sedan ska jag komma på ett sätt att avgöra om spelaren med sina träningar kan välja mer speciella poängalternativ som kåk och stege.
 
+Jag ska även fixa så att man alltid sparar alla träningar vid sista kastet.
+
+Koden är i en evighets loop då den alltid frågar om man vill kasta tärningarna och sedan börjag om, ska kolla in på detta
+
 https://www.w3schools.com/python/python_operators.asp
 https://www.markdownguide.org/cheat-sheet/
 
