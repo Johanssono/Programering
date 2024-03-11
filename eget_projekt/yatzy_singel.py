@@ -19,138 +19,143 @@ player.append(namn)
 svar = input("Vill du spela ett spel? j/n: ")
 
 if svar == "j":
-    antal = 0
-    throw = 3
-    while throw > 0:
-        
-        kasta = input("Vill du kasta tärningarna? j/n: ")
-        
-        while kasta == "j":
-            while antal < 5:
-                tärning = random.randrange(1, 7)
-                dice.append(tärning)
-                antal = antal + 1
 
-            print(dice)
+    while svar == "j":
+        antal = 0
+        throw = 3
 
-            save_dice = input("Vill du spara några tärningar? j/n: ")
+        while throw > 0:
+            
+            kasta = input("Vill du kasta tärningarna? j/n: ")
+            
+            while kasta == "j":
+                while antal < 5:
+                    tärning = random.randrange(1, 7)
+                    dice.append(tärning)
+                    antal = antal + 1
 
-            while save_dice == "j":
-
-                print(dice)
-                save = int(input("vilka vill du spara? 1, 2, 3, 4, 5 eller 6: "))
-
+                if throw > 1:
                 
-                for i in range(len(dice) -1, -1, -1):
-                    if dice[i] == save:
-                        saved.append(save)
-                        dice.remove(save)
+                    print(dice)
+
+                    save_dice = input("Vill du spara några tärningar? j/n: ")
+
+                    while save_dice == "j":
+
+                        print(dice)
+                        save = int(input("vilka vill du spara? 1, 2, 3, 4, 5 eller 6: "))
+
+                        
+                        for i in range(len(dice) -1, -1, -1):
+                            if dice[i] == save:
+                                saved.append(save)
+                                dice.remove(save)
+
+                                '''
+                                Denna for slinga kollar igenom listan "dice" och lägger in dem i 
+                                listan "saved", men for slingan kollar igenom listan "dice" backlänges 
+                                för att int ändra index-värdet hos objekten i listan och garantera att 
+                                alla bjekt av samma värde tas bort oavsätt index
+                                '''
+
 
                         '''
-                        Denna for slinga kollar igenom listan "dice" och lägger in dem i 
-                        listan "saved", men for slingan kollar igenom listan "dice" backlänges 
-                        för att int ändra index-värdet hos objekten i listan och garantera att 
-                        alla bjekt av samma värde tas bort oavsätt index
+                        for tal in dice:
+                            if (tal == save):
+                                saved.append(tal)
+                                dice.remove(tal)
+
+                        tidigare försök till att skapa en aoutomatiserad lista som tar bort och lägger in vald tärning
                         '''
+                        print(dice)
+                        save_dice = input("Vill du spara några fler tärningar? j/n: ")
 
-
-                '''
-                for tal in dice:
-                    if (tal == save):
-                        saved.append(tal)
-                        dice.remove(tal)
-
-                tidigare försök till att skapa en aoutomatiserad lista som tar bort och lägger in vald tärning
-                '''
-                print(dice)
-                save_dice = input("Vill du spara några fler tärningar? j/n: ")
-
-            print("sparade tärningar: ", saved)
-            
-            remove_dice = input("Vill du ta bort några tärningar? j/n: ")
+                    print("sparade tärningar: ", saved)
+                    
+                    remove_dice = input("Vill du ta bort några tärningar? j/n: ")
 
 
 
-            while remove_dice == "j":
-                delete = input("1, 2, 3, 4, 5 eller 6? ")
-                for tal in dice:
-                    if (tal == delete):
-                        delete.remove(tal)
+                    while remove_dice == "j":
+                        delete = input("1, 2, 3, 4, 5 eller 6? ")
+                        for tal in dice:
+                            if (tal == delete):
+                                delete.remove(tal)
+                        
+                        print("sparade tärningar: ", saved)
+                    
+                        remove_dice = input("Vill du ta bort några tärningar? j/n: ")
+
+                    dice = []
+
+                    dice.extend(saved)
+
+                    print(dice)
+                    antal = len(dice)
+                    throw = throw - 1
+
+                    saved = []
+                    kasta = input("Vill du kasta tärningarna? j/n: ")
                 
-                print("sparade tärningar: ", saved)
+                else:
+                    throw = throw - 1
+                    dice.sort()
+                    print(dice)
+                    print(table)
+                    kasta = "n"
+                    
+
+    #En lista med alla olika poängalternativ,
+    #koden ska kolla listan med tärningar och sedan utesluta dalternativ från listan med poäng alternativ.
+    #Detta genom att kolla vilka slags tärningar som listan med resulterande tärningar inehåller.
+
+    #sedan ska programet visa dessa utvalda alternativ för spelaren och låta spelaren välja ett av alternativen
+    #Om programmet bedömer att det inte finns några alternativ som faller samman med tärningarna,
+    #ska programmet föra fram en lista med de återstående alternativen och låta spelaren stryka ett alternativ.
+
+    #När ett alternativ är valt eller struket, ska listan ta bort detta alternativ och spara det i den slutgiltiga listan.
+    #Sedan ska spelaren presenteras med den slutgiltiga listan och summan av poängen.
+
+        for siffra in dice:
+            if siffra == 1:
+                for alternativ in table:
+                    if alternativ == "Ettor":
+                        choices.append("1. Ettor")
+
+            elif siffra == 2:
+                for alternativ in table:
+                    if alternativ == "Tvåor":
+                        choices.append("2. Tvåor")
             
-                remove_dice = input("Vill du ta bort några tärningar? j/n: ")
-
-            dice = []
-
-            dice.extend(saved)
+            elif siffra == 3:
+                for alternativ in table:
+                    if alternativ == "Treor":
+                        choices.append("3. Treor")
             
-            print(dice)
-            antal = len(dice)
-            throw = throw - 1
-
-            if throw > 0:
-                saved = []
-                kasta = input("Vill du kasta tärningarna? j/n: ")
-
-
-            else:
-                dice.sorty()
-                print(dice)
-                print(table)
+            elif siffra == 4:
+                for alternativ in table:
+                    if alternativ == "Fyror":
+                        choices.append("4. Fyror")
             
+            elif siffra == 5:
+                for alternativ in table:
+                    if alternativ == "Femmor":
+                        choices.append("5. Femor")
+            
+            elif siffra == 6:
+                for alternativ in table:
+                    if alternativ == "Sexor":
+                        choices.append("6. Sexor")
 
-#En lista med alla olika poängalternativ,
-#koden ska kolla listan med tärningar och sedan utesluta dalternativ från listan med poäng alternativ.
-#Detta genom att kolla vilka slags tärningar som listan med resulterande tärningar inehåller.
-
-#sedan ska programet visa dessa utvalda alternativ för spelaren och låta spelaren välja ett av alternativen
-#Om programmet bedömer att det inte finns några alternativ som faller samman med tärningarna,
-#ska programmet föra fram en lista med de återstående alternativen och låta spelaren stryka ett alternativ.
-
-#När ett alternativ är valt eller struket, ska listan ta bort detta alternativ och spara det i den slutgiltiga listan.
-#Sedan ska spelaren presenteras med den slutgiltiga listan och summan av poängen.
-
-    for siffra in dice:
-        if siffra == 1:
-            for alternativ in table:
-                if alternativ == "Ettor":
-                    choices.append("1. Ettor")
-
-        elif siffra == 2:
-            for alternativ in table:
-                if alternativ == "Tvåor":
-                    choices.append("2. Tvåor")
-        
-        elif siffra == 3:
-            for alternativ in table:
-                if alternativ == "Treor":
-                    choices.append("3. Treor")
-        
-        elif siffra == 4:
-            for alternativ in table:
-                if alternativ == "Fyror":
-                    choices.append("4. Fyror")
-        
-        elif siffra == 5:
-            for alternativ in table:
-                if alternativ == "Femmor":
-                    choices.append("5. Femor")
-        
-        elif siffra == 6:
-            for alternativ in table:
-                if alternativ == "Sexor":
-                    choices.append("6. Sexor")
-
-        elif siffra > 0:
-            choices.append("\n")
-        
-        elif siffra > 0:
-            choices.append("\n")
+            elif siffra > 0:
+                choices.append("\n")
+            
+            elif siffra > 0:
+                choices.append("\n")
 
         print(choices)
 
-        sattsning = input("Skriv siffran på alternativet du önskar välja")
+        sattsning = input("Skriv siffran på alternativet du önskar välja: ")
 
         if sattsning == 1:
             table.remove("Ettor")
@@ -194,9 +199,10 @@ if svar == "j":
                     poäng_tvåor.append(6)
             poäng_sexor = sum(poäng_sexor)
 
-        
-        
-        
+        choices = []
+        svar = input("Vill du spela ett spel? j/n: ")
+
+            
 
 else:
     print("hej då")

@@ -2,6 +2,18 @@ Logbok
 ==============
 
 
+Vecka 11
+--------------
+Koden jag skrev förra veckan fungerade lita halvt och började om utan spelarens godkännande, detta var jobbigt då det var småproblem inne i koden som påverkade. Jag löste detta genom att ändra värdet på variabeln "kasta" så att while loopen inte upprepar sig, sedan ändrade jag så att man inte får alternativet att spara tärningar sista kastet då alla tärningar ändå ska sparas. 
+
+Jag gjorde även att när man spelat klart en omgång och valt vart poängen ska placeras så kan man välja att spela igen.
+
+Dett uppstod dock ett problem med koden, när man ska välja vart man vill lägga poängen så upprepade den alternativen för varge siffra som upprepades mer än en gång, så om man hade tärningarna "2,3,4,5,5" skulle alternativet för att lägga poängen på "femmor" upprepas två gånger.
+Jag han dock inte kolla på att fixa detta problemet, utan får göra det nästa gång.
+
+Jag han även inte kolla på hur jag skulle lösa att ge alternativ för "kåk" eller liknande, så just nu kan man bara lägga poängen på 1-6. Jag han även inte riktigt kolla om koden som genererar listan med poäng alternativ fungerar till 100%, utan han bara kolla så att den fungerar i stort sätt.
+
+Nästa gång ska jag kolla närmare på koden som genererar poäng alternativen och upprepningen av alternativ. Om jag hinner ska jag även kolla på om jag kan hoppa över frågan om man vill redigera listan med sparade tärningar om man inte har några sparade tärningar.
 
 Vecka 10
 --------------
