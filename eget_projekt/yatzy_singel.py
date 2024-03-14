@@ -102,6 +102,7 @@ if svar == "j":
                     dice.sort()
                     print(dice)
                     print(table)
+                    print()
                     kasta = "n"
                     
 
@@ -120,32 +121,50 @@ if svar == "j":
             if siffra == 1:
                 for alternativ in table:
                     if alternativ == "Ettor":
-                        choices.append("1. Ettor")
+                        if "1. Ettor" in choices:
+                            pass
+                        else:
+                            choices.append("1. Ettor")
 
             elif siffra == 2:
                 for alternativ in table:
                     if alternativ == "Tvåor":
-                        choices.append("2. Tvåor")
+                        if "2. Tvåo" in choices:
+                            pass
+                        else:
+                            choices.append("2. Tvåor")
             
             elif siffra == 3:
                 for alternativ in table:
                     if alternativ == "Treor":
-                        choices.append("3. Treor")
+                        if "3. Treor" in choices:
+                            pass
+                        else:
+                            choices.append("3. Treor")
             
             elif siffra == 4:
                 for alternativ in table:
                     if alternativ == "Fyror":
-                        choices.append("4. Fyror")
+                        if "4. Fyror" in choices:
+                            pass
+                        else:
+                            choices.append("4. Fyror")
             
             elif siffra == 5:
                 for alternativ in table:
                     if alternativ == "Femmor":
-                        choices.append("5. Femor")
+                        if "5. Femor" in choices:
+                            pass
+                        else:
+                            choices.append("5. Femor")
             
             elif siffra == 6:
                 for alternativ in table:
                     if alternativ == "Sexor":
-                        choices.append("6. Sexor")
+                        if "6. Sexor" in choices:
+                            pass
+                        else:
+                            choices.append("6. Sexor")
 
             elif siffra > 0:
                 choices.append("\n")

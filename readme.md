@@ -4,6 +4,13 @@ Logbok
 
 Vecka 11
 --------------
+
+*Torsdag*: Jag har fixat så att koden bara ger en ett alternativ av valmöjligheter oavsätt om man har, till exempel, om man har flera ettor så får man ändå bara alternativet att välja ettor en gång istället för tidigare då man fick alternativet lika många gånger som mängden ettor man har. 
+
+Jag kom på att jag kan skapa en kod som använder sig av en variabel. Denna variabel ska ta värdet av objektet i index 1 i listan med tärningar och sedan räkna hur många gånger detta värdet finns i listan, till exempel om index 1 = 2 ska variabeln ta värdet 2 och kolla hur många tvåor som finns i listan. Sedan ska koden upprepa detta för alla index i listan och på något sätt hoppa över index som har samma värde som ett index som redan räknats. Men jag han inte börja utan ska försöka komma på hur denna koden ska se ut nästa lektion.
+
+
+
 Koden jag skrev förra veckan fungerade lita halvt och började om utan spelarens godkännande, detta var jobbigt då det var småproblem inne i koden som påverkade. Jag löste detta genom att ändra värdet på variabeln "kasta" så att while loopen inte upprepar sig, sedan ändrade jag så att man inte får alternativet att spara tärningar sista kastet då alla tärningar ändå ska sparas. 
 
 Jag gjorde även att när man spelat klart en omgång och valt vart poängen ska placeras så kan man välja att spela igen.
