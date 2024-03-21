@@ -166,58 +166,83 @@ if svar == "j":
                         else:
                             choices.append("6. Sexor")
 
-            elif siffra > 0:
-                choices.append("\n")
-            
-            elif siffra > 0:
-                choices.append("\n")
+
+
+
+        b = 0
+        c = 0
+        a = dice[1]    
+        for a in dice:
+            b = b + 1
+            if b == 2:
+                for alternativ in table:
+                    if alternativ == "par":
+                        if "7. par" in choices:
+                            pass
+                        else:
+                            choices.append("7. par")
+
+## måst fixa så att om man har 2 par ska man kunna välja vilka som man vill lägga på par
+
+
+
+                a = dice[3]
+                for a in dice:
+                    c = c + 1
+                    if c == 2 and b == 2:
+                        choices.append("8. tvåpar")
+
+                    elif c == 3 and b == 2:
+                        choices.append("11. kåk")
+        
 
         print(choices)
 
         sattsning = input("Skriv siffran på alternativet du önskar välja: ")
 
-        if sattsning == 1:
+        if sattsning == "1":
             table.remove("Ettor")
             for etta in dice:
                 if etta == 1:
                     poäng_ettor.append(1)
             poäng_ettor = sum(poäng_ettor)
 
-        elif sattsning == 2:
+        elif sattsning == "2":
             table.remove(Tvåor)
             for tvåa in dice:
                 if tvåa == 2:
                     poäng_tvåor.append(2)
             poäng_tvåor = sum(poäng_tvåor)
 
-        elif sattsning == 3:
+        elif sattsning == "3":
             table.remove(Treor)
             for tvåa in dice:
                 if etta == 3:
                     poäng_tvåor.append(3)
             poäng_treor = sum(poäng_treor)
 
-        elif sattsning == 4:
+        elif sattsning == "4":
             table.remove(Fyror)
             for tvåa in dice:
                 if etta == 4:
                     poäng_tvåor.append(4)
             poäng_fyror = sum(poäng_fyror)
 
-        elif sattsning == 5:
+        elif sattsning == "5":
             table.remove(Femmor)
             for tvåa in dice:
                 if etta == 5:
                     poäng_tvåor.append(5)
             poäng_femmor = sum(poäng_femmor)
 
-        elif sattsning == 6:
+        elif sattsning == "6":
             table.remove(Sexor)
             for tvåa in dice:
                 if etta == 6:
                     poäng_tvåor.append(6)
             poäng_sexor = sum(poäng_sexor)
 
+        dice = []
         choices = []
         svar = input("Vill du spela ett spel? j/n: ")
 
