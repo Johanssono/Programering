@@ -168,27 +168,51 @@ if svar == "j":
 
 
 
-
         b = 0
         c = 0
         a = dice[0]    
-        for a in dice:
-            b = b + 1
-            if b == 2:
-                a = dice[2]
-                for a in dice:
-                    c = c + 1
-            elif b == 3:
-                a = dice[3]
-                for a in dice:
-                    c = c + 1
+        k = dice.index(a)
+        for g in dice:
+            if g == a:
+                b = b + 1
+
+                ##Blir en evighetsloop
+
+        while k < 5:
+            while b == 1:
+
+                ##Blir en eveghetsloop
+        
+                b = 0
+                a = dice[k + 1]
+                k = dice.index(a)
+                for g in dice:
+                    if g == a:
+                        b = b + 1
+
+        if b == 2:
+            while k < 5:    
+                while c < 2:
+                    a = dice.index(a + 1)
+                    for g in dice:
+                        if g == a:
+                            c = c + 1
+        if b == 3:
+            while k < 5:    
+                while c < 2:
+                    a = dice.index(a) + 1
+                    for g in dice:
+                        if g == a:
+                            c = c + 1
+
+
         if b == 2 or c == 3:
             if "7. par" in choices:
                 pass
             else:
                 choices.append("7. par")
 
-        if b == 2 and c == 2:
+        elif b == 2 and c == 2:
             if "8. tvåpar" in choices:
                 pass
             else:
@@ -200,7 +224,7 @@ if svar == "j":
             else:
                 choices.append("9. tretal")
 
-        if b == 4 or c == 4:
+        elif b == 4 or c == 4:
             if "10. fyrtal" in choices:
                 pass
             else:
@@ -212,11 +236,7 @@ if svar == "j":
             else:
                 choices.append("11. kåk")
 
-## måst fixa så att om man har 2 par ska man kunna välja vilka som man vill lägga på par
 
-
-
-               
                     
         
 
@@ -286,3 +306,66 @@ else:
 
     #tärning_5 = random.randrange(1, 7)
     #dice.append(tärning_5)
+
+
+
+
+"""
+
+        if b == 1:
+            b = 0
+            a = dice[1+1]
+            for g in dice:
+                if g == a:
+                    b = b + 1
+        elif b == 2:
+            a = dice[2]
+            for g in dice:
+                if g == a:
+                    c = c + 1
+        elif c == 1:
+            a = dice[3]
+            for g in dice:
+                if g == a:
+                    c = c + 1
+        elif b == 3:
+            a = dice[3]
+            for g in dice:
+                if g == a:
+                    c = c + 1
+
+        if b == 2 or c == 3:
+            if "7. par" in choices:
+                pass
+            else:
+                choices.append("7. par")
+
+        if b == 2 and c == 2:
+            if "8. tvåpar" in choices:
+                pass
+            else:
+                choices.append("8. tvåpar")
+        
+        elif b == 3 or c == 3:
+            if "9. tretal" in choices:
+                pass
+            else:
+                choices.append("9. tretal")
+
+        if b == 4 or c == 4:
+            if "10. fyrtal" in choices:
+                pass
+            else:
+                choices.append("10. fyrtal")
+        
+        elif b == 2 and c == 3 or b == 3 and c == 2:
+            if "11. kåk" in choices:
+                pass
+            else:
+                choices.append("11. kåk")
+
+## måst fixa så att om man har 2 par ska man kunna välja vilka som man vill lägga på par
+
+
+
+         """      

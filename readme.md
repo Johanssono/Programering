@@ -6,6 +6,8 @@ Vecka 12
 --------------
 Jag har skapat en kod som ska kolla om spelaren har möjlighet att med sina tärningar välja saker som "tvåpar" och "kåk". Jag har inte hunnit jobba så mycket med koden och det är bara ett test för att kolla om jag kan göra som jag tänker mig och funkar inte riktigt än. Jag har inte hunnit testa koden ordentligt och behöver fortsätta med den nästa vecka.
 
+Jag har trixat och exprementerat med olika versioner av koden jag vill skapa men har inte kommit fram till en passande version än, ska fortsätta med detta.
+
 Vecka 11
 --------------
 
