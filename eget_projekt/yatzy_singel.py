@@ -166,12 +166,14 @@ if svar == "j":
                         else:
                             choices.append("6. Sexor")
 
-
+        dice = [1, 2, 2, 5, 5]
+        print(dice)
 
         b = 0
         c = 0
-        a = dice[0]    
+        a = dice[0]
         k = dice.index(a)
+
         for g in dice:
             if g == a:
                 b = b + 1
@@ -190,20 +192,28 @@ if svar == "j":
                     if g == a:
                         b = b + 1
 
-        if b == 2:
-            while k < 5:    
-                while c < 2:
-                    a = dice.index(a + 1)
-                    for g in dice:
-                        if g == a:
-                            c = c + 1
-        if b == 3:
-            while k < 5:    
-                while c < 2:
-                    a = dice.index(a) + 1
-                    for g in dice:
-                        if g == a:
-                            c = c + 1
+            if b == 2:
+                while k < 5:    
+                    while c < 2:
+
+                        #fungerar om det finns en siffra mellan nr 2
+                        k = dice.index(a, a + 1)
+                        #till exempel om man ändrar om listan från 1, 2, 2, 5, 5 till 1, 2, 5, 2, 5
+
+                        a = dice[k + 1]
+                        k = dice.index(a)
+
+                        if dice[4]:
+                            for g in dice:
+                                if g == a:
+                                    c = c + 1
+            if b == 3:
+                while k < 5:    
+                    while c < 2:
+                        a = dice.index(a) + 1
+                        for g in dice:
+                            if g == a:
+                                c = c + 1
 
 
         if b == 2 or c == 3:
