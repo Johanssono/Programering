@@ -2,11 +2,21 @@ Logbok
 ==============
 
 
+Vecka 13
+--------------
+Jag kollat in på att använda mid av count för att räkna ut hur många av varge tal som finns i listan och om ett tal upprepas mer än en gång och mindre än fyra gånger, ska detta talet dubblas och läggas in i listan tvåpar för att äkna ut om det finns två stycken par i listan med tärningar. Men jag vet inte hur jag ska göra för att koden inte ska räkna båda femmorna två gånger.
+
+Jag använde mig av denna hemsidan: https://docs.python.org/3/tutorial/datastructures.html
+
 Vecka 12
 --------------
 Jag har skapat en kod som ska kolla om spelaren har möjlighet att med sina tärningar välja saker som "tvåpar" och "kåk". Jag har inte hunnit jobba så mycket med koden och det är bara ett test för att kolla om jag kan göra som jag tänker mig och funkar inte riktigt än. Jag har inte hunnit testa koden ordentligt och behöver fortsätta med den nästa vecka.
 
 Jag har trixat och exprementerat med olika versioner av koden jag vill skapa men har inte kommit fram till en passande version än, ska fortsätta med detta.
+
+Jag testade även en kod som tog fram indexet för andra upprepningen av ett tal i listan, dvs att om en lista hade mer än en av siffran 5 skulle koden ta fram indexet för den andra 5,an. Detta fungerade så länge inte båda femmorna är brevid varandra i listan.
+
+För den här koden använde jag mig av den här hemsidan: https://www.reddit.com/r/learnpython/comments/tedz22/second_occurrence_index_number_from_list/?rdt=46815&onetap_auto=true&one_tap=true
 
 Vecka 11
 --------------

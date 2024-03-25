@@ -207,6 +207,19 @@ if svar == "j":
                             for g in dice:
                                 if g == a:
                                     c = c + 1
+                        
+
+
+"""
+while c < 2:
+    d = index(3)
+    if a == d:
+        a = index(4)
+    elif a != d:
+        a = index 
+"""
+
+
             if b == 3:
                 while k < 5:    
                     while c < 2:
