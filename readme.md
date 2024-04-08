@@ -2,6 +2,21 @@ Logbok
 ==============
 
 
+Vecka 15
+--------------
+Jag har ändrat min kod och har gjort så att jag räknar antalet av varge siffra i listan med tärningarna med hjälp av dice.count(a), om det finns fler av ett tal än 1, till exempel om det finns två eller fler fyror i listan, så tas dessa bort och läggs in i en ny lista. Denna nya listan avgör om man kan välja mellan kåk eller liknande genom att avgöra hur lång den nya listan är. Om den nya listan är 3 objekt lång vet jag att det bara kan finnas tre av en siffra då det inte kan vara en ensamn siffra i listan. om det finns fyra kan det antingen vara fyra av en eller kåk, detta avgör jag genom att räkna antalet av av varge siffra i den nya listan och om gör igentligen om prosessen en gång till.
+
+Detta gör att min kod inte blir jätte snygg dock.
+
+Jag har inte hunnit testa om det fungerar utan behöver göra det nästa gång.
+
+källor för dagens problem är Rikard då han gav mig tipset på att använda dice.count(a)
+
+Vecka 14
+--------------
+lov
+
+
 Vecka 13
 --------------
 Jag kollat in på att använda mid av count för att räkna ut hur många av varge tal som finns i listan och om ett tal upprepas mer än en gång och mindre än fyra gånger, ska detta talet dubblas och läggas in i listan tvåpar för att äkna ut om det finns två stycken par i listan med tärningar. Men jag vet inte hur jag ska göra för att koden inte ska räkna båda femmorna två gånger.
