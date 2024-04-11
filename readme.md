@@ -12,6 +12,10 @@ Jag har inte hunnit testa om det fungerar utan behöver göra det nästa gång.
 
 källor för dagens problem är Rikard då han gav mig tipset på att använda dice.count(a)
 
+Jag har nu kollat och fixat så att koden fungerar och ger spelaren rätt alternativ. Koden kan avgöra om spelaren ska få alternativ som två par eller par eller båda baserat på längden av listan "par" och om första och sista siffran i listan är samma.
+
+Jag ska nu börja jobba på att göra så man kan spela fler personer och lägga in sina poäng i poänglistor så att man kan spara sina poäng per spelare.
+
 Vecka 14
 --------------
 lov
