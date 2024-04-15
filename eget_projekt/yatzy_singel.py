@@ -4,7 +4,7 @@ player = []
 dice = []
 antal = 5
 saved = []
-table = ["Ettor", "Tvåor", "Treor", "Fyror", "Femmor", "Sexor", "Par", "Två par", "Tretal", "Fyrtal", "Kåk", "Liten stege", "Stor Stege", "Chans", "Yatzy"]
+table = ["Ettor", "Tvåor", "Treor", "Fyror", "Femmor", "Sexor", "Par", "Två par", "Tretal", "Fyrtal", "Kåk", "Liten stege", "Stor Stege","Yatzy", "Chans"]
 choices = []
 par = []
 poäng_ettor = []
@@ -118,6 +118,9 @@ if svar == "j":
     #När ett alternativ är valt eller struket, ska listan ta bort detta alternativ och spara det i den slutgiltiga listan.
     #Sedan ska spelaren presenteras med den slutgiltiga listan och summan av poängen.
 
+        dice = [3, 3, 5, 5, 6]
+        print(dice)
+
         for siffra in dice:
             if siffra == 1:
                 for alternativ in table:
@@ -130,7 +133,7 @@ if svar == "j":
             elif siffra == 2:
                 for alternativ in table:
                     if alternativ == "Tvåor":
-                        if "2. Tvåo" in choices:
+                        if "2. Tvåor" in choices:
                             pass
                         else:
                             choices.append("2. Tvåor")
@@ -167,8 +170,7 @@ if svar == "j":
                         else:
                             choices.append("6. Sexor")
 
-        dice = [1, 2, 2, 5, 5]
-        print(dice)
+        
 
         ettor = dice.count(1)
         tvåor = dice.count(2)
@@ -207,6 +209,9 @@ if svar == "j":
                 if dice[i] == 6:
                     par.append(6)
                     dice.remove(6)
+
+        
+        
 
         ettor = par.count(1)
         tvåor = par.count(2)
@@ -259,8 +264,6 @@ if svar == "j":
 
 
 
-
-
         elif len(par) == 5:
             ettor = dice.count(1)
             tvåor = dice.count(2)
@@ -281,8 +284,14 @@ if svar == "j":
                         if "15. Yatzy" in choices:
                             pass
                         else:
-                            choices.inset("15. Yatzy")
+                            choices.append("15. Yatzy")
 
+        for alternativ in table:
+                    if alternativ == "Chans":
+                        if "16. Chans" in choices:
+                            pass
+                        else:
+                            choices.append("16. Chans")
 
                     
         

@@ -2,6 +2,12 @@ Logbok
 ==============
 
 
+Vecka 16
+--------------
+Jag har jobbat med att få så att man altid har alternativet att välja chans tills man valt det. Jag har även börjat kolla på hur jag ska göra för att göra det möjligt för fler personer att spela samtidigt och emmot varandra.
+
+Nästa gång ska jag dock börja jobba på strukturen med och fökusera på att förkorta och omvandla kod som upprepar sig till slingor eller liknande.
+
 Vecka 15
 --------------
 Jag har ändrat min kod och har gjort så att jag räknar antalet av varge siffra i listan med tärningarna med hjälp av dice.count(a), om det finns fler av ett tal än 1, till exempel om det finns två eller fler fyror i listan, så tas dessa bort och läggs in i en ny lista. Denna nya listan avgör om man kan välja mellan kåk eller liknande genom att avgöra hur lång den nya listan är. Om den nya listan är 3 objekt lång vet jag att det bara kan finnas tre av en siffra då det inte kan vara en ensamn siffra i listan. om det finns fyra kan det antingen vara fyra av en eller kåk, detta avgör jag genom att räkna antalet av av varge siffra i den nya listan och om gör igentligen om prosessen en gång till.
