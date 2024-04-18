@@ -120,7 +120,29 @@ if svar == "j":
 
         dice = [3, 3, 5, 5, 6]
         print(dice)
+        a = dice[0]
 
+        while a < 7:
+            for k in dice:
+                if k == a:
+                    b = a - 1
+                    for alternativ in table:
+                        if alternativ == table[b]:
+                            if table[b] not in choices:
+                                choices.append(table[b])
+            a = a + 1   
+
+
+            #jag kom på att det inte fungerar att använda index på det här settet då indexet ändras då när man valt ett alternativ så tas det bort ur listan.
+
+
+#Jag föränklade koden nedan för att minska mängden kod att underhålla, detta gjorde jag genom en while loop som ökar värden för 
+# varge tal i listan med tärningar. Då den bara kollar från ett till sex, går det att använda mig av index för att kolla omalternativen finns,
+#detta på grund av att i listan med alternativ kommer 
+
+
+
+        """
         for siffra in dice:
             if siffra == 1:
                 for alternativ in table:
@@ -168,9 +190,8 @@ if svar == "j":
                         if "6. Sexor" in choices:
                             pass
                         else:
-                            choices.append("6. Sexor")
-
-        
+                            choices.append("6. Sexor")   
+        """
 
         ettor = dice.count(1)
         tvåor = dice.count(2)

@@ -8,6 +8,10 @@ Jag har jobbat med att få så att man altid har alternativet att välja chans t
 
 Nästa gång ska jag dock börja jobba på strukturen med och fökusera på att förkorta och omvandla kod som upprepar sig till slingor eller liknande.
 
+Jag förenklade koden som kollar om man har slått en 1-6 med tärningarna. Jag gjorde så att envariabel tog värdet av första indexet i listan med dem sorterade tärningarna. Sedan gav jag en variabel värdet av en mindre än första variabeln, sedan avände jag den nya variabeln för att ta objektet i listan med alla alternativ som hade samma index som värdet av den andra variabeln. Detta går då alternativ "Ettor" i listan har index 0 osv. 
+
+Det uppstod dock ett problem, för då man väljer vad man vill lägga poängen på, så tar man bort det ur listan med alternativ vilket då ändrar indexvärderna så att omjektet "Treor" kan få index 1 istället för index 2.
+
 Vecka 15
 --------------
 Jag har ändrat min kod och har gjort så att jag räknar antalet av varge siffra i listan med tärningarna med hjälp av dice.count(a), om det finns fler av ett tal än 1, till exempel om det finns två eller fler fyror i listan, så tas dessa bort och läggs in i en ny lista. Denna nya listan avgör om man kan välja mellan kåk eller liknande genom att avgöra hur lång den nya listan är. Om den nya listan är 3 objekt lång vet jag att det bara kan finnas tre av en siffra då det inte kan vara en ensamn siffra i listan. om det finns fyra kan det antingen vara fyra av en eller kåk, detta avgör jag genom att räkna antalet av av varge siffra i den nya listan och om gör igentligen om prosessen en gång till.
