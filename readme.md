@@ -2,6 +2,16 @@ Logbok
 ==============
 
 
+Vecka 17
+--------------
+Jag har skrivit kod som erätter längre kod stycken, jag ändrade även listan med alla alternativ och gjorde den till ett dictionary.
+
+Jag ska fortsätta förenkla koden och har börjat föränkla koden som kollar om man kan lägga poäng på par eller liknande.
+
+Jag måste även komma på bättre namn på funktionerna då bara för att testa har valt okorekta namn.
+
+
+
 Vecka 16
 --------------
 Jag har jobbat med att få så att man altid har alternativet att välja chans tills man valt det. Jag har även börjat kolla på hur jag ska göra för att göra det möjligt för fler personer att spela samtidigt och emmot varandra.

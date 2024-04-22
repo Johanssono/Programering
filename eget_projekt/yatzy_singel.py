@@ -4,7 +4,7 @@ player = []
 dice = []
 antal = 5
 saved = []
-table = ["Ettor", "Tvåor", "Treor", "Fyror", "Femmor", "Sexor", "Par", "Två par", "Tretal", "Fyrtal", "Kåk", "Liten stege", "Stor Stege","Yatzy", "Chans"]
+table = {1: "Ettor", 2: "Tvåor", 3: "Treor", 4: "Fyror", 5: "Femmor", 6: "Sexor", 7: "Par", 8: "Två par", 9: "Tretal", 10: "Fyrtal", 11: "Kåk", 12:"Liten stege", 13:"Stor Stege", 14: "Yatzy", 15: "Chans"}
 choices = []
 par = []
 poäng_ettor = []
@@ -125,13 +125,11 @@ if svar == "j":
         while a < 7:
             for k in dice:
                 if k == a:
-                    b = a - 1
                     for alternativ in table:
-                        if alternativ == table[b]:
-                            if table[b] not in choices:
-                                choices.append(table[b])
-            a = a + 1   
-
+                        if alternativ == a:
+                            if table[a] not in choices:
+                                choices.append(table[a])
+            a = a + 1 
 
             #jag kom på att det inte fungerar att använda index på det här settet då indexet ändras då när man valt ett alternativ så tas det bort ur listan.
 
@@ -193,6 +191,22 @@ if svar == "j":
                             choices.append("6. Sexor")   
         """
 
+
+        a = 1
+
+
+        while a < 7:
+            räkning = dice.count(a)
+            if räkning > 1:
+                for i in range(len(dice) -1, -1, -1):
+                    if dice[i] == a:
+                        par.append(a)
+                        dice.remove(a)
+            a = a + 1
+    
+#En kod som förkortar koden nedan och räknar hur många av ett nummer man har och lägger in dem i listan par som ska beräknas senare.
+
+"""
         ettor = dice.count(1)
         tvåor = dice.count(2)
         treor = dice.count(3)
@@ -230,9 +244,7 @@ if svar == "j":
                 if dice[i] == 6:
                     par.append(6)
                     dice.remove(6)
-
-        
-        
+"""
 
         ettor = par.count(1)
         tvåor = par.count(2)
@@ -249,14 +261,40 @@ if svar == "j":
                     else:
                         choices.append("7. Par")
 
+
+
+        if len(par) = 4:
+       
+
+
+            if alternativ == "Par":
+                    if "7. Par" in choices:
+                        pass
+                    else:
+                        choices.append("7. Par")
+
+            a = 1
+            par.count(a)
+
+            while par.count(a) > 1:     #Jag ska skriva en kod som använder sig av variabler för att kolla om man kan välja par, tvåpar osv.
+                b = a + 1
+                par.count(b)
+                if a == b:
+                    
+
+                for alternativ in table:
+                    if alternativ == "Två par":
+                        if "8. Två par" in choices:
+                            pass
+
+
+
         elif len(par) == 4:
             if par[0] != par[0 - 1]:
                 for alternativ in table:
                     if alternativ == "Par":
-                        if "7. Par" in choices:
-                            pass
-                        else:
-                            choices.append("7. Par")
+                        if "7. Par" not in choices:
+                            
             if ettor == 2 or tvåor == 2 or treor == 2 or fyror == 2 or femmor == 2 or sexor == 2:
                 for alternativ in table:
                     if alternativ == "Två par":
