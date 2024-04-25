@@ -10,6 +10,8 @@ Jag ska fortsätta förenkla koden och har börjat föränkla koden som kollar o
 
 Jag måste även komma på bättre namn på funktionerna då bara för att testa har valt okorekta namn.
 
+Jag fastnade idag och lyckades inte komma någon vart, jag vet inte hur jag ska göra för att förkorta koden på ett smidigt sätt när jag ska räkna ut om man kan välja par eller tvåpar mm.
+
 
 
 Vecka 16

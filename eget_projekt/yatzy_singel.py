@@ -206,7 +206,7 @@ if svar == "j":
     
 #En kod som förkortar koden nedan och räknar hur många av ett nummer man har och lägger in dem i listan par som ska beräknas senare.
 
-"""
+        """
         ettor = dice.count(1)
         tvåor = dice.count(2)
         treor = dice.count(3)
@@ -244,7 +244,7 @@ if svar == "j":
                 if dice[i] == 6:
                     par.append(6)
                     dice.remove(6)
-"""
+        """
 
         ettor = par.count(1)
         tvåor = par.count(2)
@@ -263,18 +263,28 @@ if svar == "j":
 
 
 
-        if len(par) = 4:
-       
+        if len(par) == 4:
+            if par[0] != par[0 - 1]:
+                for alternativ in table:
+                    if 
+
+                count_down = 1
+                while count_down < 6:
+                    first = 1
+                    par.count(first)
+                    if par.count(first) > 1 and par.count(first) < 4:
+                    
+                    
 
 
-            if alternativ == "Par":
-                    if "7. Par" in choices:
-                        pass
-                    else:
-                        choices.append("7. Par")
 
-            a = 1
-            par.count(a)
+
+
+                first = first + 1
+
+
+
+
 
             while par.count(a) > 1:     #Jag ska skriva en kod som använder sig av variabler för att kolla om man kan välja par, tvåpar osv.
                 b = a + 1
@@ -282,10 +292,10 @@ if svar == "j":
                 if a == b:
                     
 
-                for alternativ in table:
-                    if alternativ == "Två par":
-                        if "8. Två par" in choices:
-                            pass
+                    for alternativ in table:
+                        if alternativ == "Två par":
+                            if "8. Två par" in choices:
+                                pass
 
 
 
@@ -294,6 +304,7 @@ if svar == "j":
                 for alternativ in table:
                     if alternativ == "Par":
                         if "7. Par" not in choices:
+                            choices.append("7. Par")
                             
             if ettor == 2 or tvåor == 2 or treor == 2 or fyror == 2 or femmor == 2 or sexor == 2:
                 for alternativ in table:
