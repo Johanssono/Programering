@@ -2,6 +2,11 @@ Logbok
 ==============
 
 
+
+Vecka 18
+--------------
+Idag her jag inte jobbat med programeringen utan behövde sitta och jobba med nätverks kursen.
+
 Vecka 17
 --------------
 Jag har skrivit kod som erätter längre kod stycken, jag ändrade även listan med alla alternativ och gjorde den till ett dictionary.
