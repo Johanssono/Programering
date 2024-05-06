@@ -7,6 +7,7 @@ dice = []
 antal = 5
 saved = []
 table = {1: "Ettor", 2: "Tvåor", 3: "Treor", 4: "Fyror", 5: "Femmor", 6: "Sexor", 7: "Par", 8: "Tretal", 9: "Fyrtal", 10: "Två par", 11: "Kåk", 12:"Liten stege", 13:"Stor Stege", 14: "Yatzy", 15: "Chans"}
+table_offer = ["Ettor", "Tvåor", "Treor", "Fyror", "Femmor", "Sexor", "Par", "Tretal", "Fyrtal", "Två par", "Kåk", "Liten stege", "Stor Stege", "Yatzy", "Chans"]
 choices = []
 par = []
 poäng_ettor = []
@@ -54,22 +55,15 @@ if svar == "j":
                                 saved.append(save)
                                 dice.remove(save)
 
-                                '''
-                                Denna for slinga kollar igenom listan "dice" och lägger in dem i 
-                                listan "saved", men for slingan kollar igenom listan "dice" backlänges 
-                                för att int ändra index-värdet hos objekten i listan och garantera att 
-                                alla bjekt av samma värde tas bort oavsätt index
-                                '''
+                                
+                                # Denna for slinga kollar igenom listan "dice" och lägger in dem i 
+                                # listan "saved", men for slingan kollar igenom listan "dice" backlänges 
+                                # för att int ändra index-värdet hos objekten i listan och garantera att 
+                                # alla bjekt av samma värde tas bort oavsätt index
+                                
 
 
-                        '''
-                        for tal in dice:
-                            if (tal == save):
-                                saved.append(tal)
-                                dice.remove(tal)
-
-                        tidigare försök till att skapa en aoutomatiserad lista som tar bort och lägger in vald tärning
-                        '''
+                        
                         print(dice)
                         save_dice = input("Vill du spara några fler tärningar? j/n: ")
 
@@ -120,7 +114,7 @@ if svar == "j":
     #När ett alternativ är valt eller struket, ska listan ta bort detta alternativ och spara det i den slutgiltiga listan.
     #Sedan ska spelaren presenteras med den slutgiltiga listan och summan av poängen.
 
-        dice = [3, 3, 5, 5, 6]
+        dice = [5, 5, 5, 5, 5]
         print(dice)
         variabel = dice[0]
 
@@ -142,76 +136,46 @@ if svar == "j":
 
 
 
-        """
-        for siffra in dice:
-            if siffra == 1:
-                for alternativ in table:
-                    if alternativ == "Ettor":
-                        if "1. Ettor" in choices:
-                            pass
-                        else:
-                            choices.append("1. Ettor")
-
-            elif siffra == 2:
-                for alternativ in table:
-                    if alternativ == "Tvåor":
-                        if "2. Tvåor" in choices:
-                            pass
-                        else:
-                            choices.append("2. Tvåor")
-            
-            elif siffra == 3:
-                for alternativ in table:
-                    if alternativ == "Treor":
-                        if "3. Treor" in choices:
-                            pass
-                        else:
-                            choices.append("3. Treor")
-            
-            elif siffra == 4:
-                for alternativ in table:
-                    if alternativ == "Fyror":
-                        if "4. Fyror" in choices:
-                            pass
-                        else:
-                            choices.append("4. Fyror")
-            
-            elif siffra == 5:
-                for alternativ in table:
-                    if alternativ == "Femmor":
-                        if "5. Femor" in choices:
-                            pass
-                        else:
-                            choices.append("5. Femor")
-            
-            elif siffra == 6:
-                for alternativ in table:
-                    if alternativ == "Sexor":
-                        if "6. Sexor" in choices:
-                            pass
-                        else:
-                            choices.append("6. Sexor")   
-        """
-
 
         variabel = 1
         count = 2
 
-        while variabel < 7:
+        while variabel < 3:
             for tärning in dice:
                 if dice.count(tärning) == count:
                     potential = 6 + variabel
                     for alternativ in table:
-                        if alternativ == table[potential]:
+                        if alternativ == potential:
                             if table[potential] not in choices:
                                 choices.append(table[potential])
                 elif dice.count(tärning) == 5:
                     for alternativ in table:
-                        if alternativ == "Yatzy":
-                            if "14. Yatzy" not in choices:
-                                choices.append("14. Yatzy")
+                        if alternativ == 14:
+                            if "Yatzy" not in choices:
+                                choices.append("Yatzy")
             count = count + 1
             variabel = variabel + 1
+
+        ettor = dice.count(1)
+        tvåor = dice.count(2)
+        treor = dice.count(3)
+        fyror = dice.count(4)
+        femmor = dice.count(5)
+        sexor = dice.count(6)
+
+        if ettor == 1 and tvåor == 1 and treor == 1 and fyror == 1 and femmor == 1:
+            for alternativ in table:
+                        if alternativ == 12:
+                            if "Liten stege" not in choices:
+                                choices.append("Liten stege")
+        elif  tvåor == 1 and treor == 1 and fyror == 1 and femmor == 1 and sexor == 1:
+            for alternativ in table:
+                        if alternativ == 13:
+                            if "Stor stege" not in choices:
+                                choices.append("Stor stege")
+
+
+        variabel = 1
 
         while variabel < 7:
             räkning = dice.count(variabel)
@@ -225,183 +189,35 @@ if svar == "j":
         if len(par) >= 4:
             if par[0] != par[0 - 1] and len(par) == 4:
                 for alternativ in table:
-                    if alternativ == "Tvåpar":
-                        if "10. Tvåpar" not in choices:
-                            choices.append("10. Tvåpar")  
+                    if alternativ == 10:
+                        if "Två par" not in choices:
+                            choices.append("Två par")  
             elif par[0] != par[0 - 1] and len(par) == 5:
                 for alternativ in table:
-                    if alternativ == "Kåk":
-                        if "11. Kåk" not in choices:
-                            choices.append("1!. Kåk") 
+                    if alternativ == 11:
+                        if "Kåk" not in choices:
+                            choices.append("Kåk") 
 
 
-            for alternativ in table:
-                    if alternativ == "Tretal":
-                        if "7. Tretal" not in choices:
-                            choices.append("7. Tretal")
             
-
-        
-
     
 #En kod som förkortar koden nedan och räknar hur många av ett nummer man har och lägger in dem i listan par som ska beräknas senare.
 
-        """
-        ettor = dice.count(1)
-        tvåor = dice.count(2)
-        treor = dice.count(3)
-        fyror = dice.count(4)
-        femmor = dice.count(5)
-        sexor = dice.count(6)
-        
-        if ettor > 1:
-            for i in range(len(dice) -1, -1, -1):
-                if dice[i] == 1:
-                    par.append(1)
-                    dice.remove(1)
-        if tvåor > 1:
-            for i in range(len(dice) -1, -1, -1):
-                if dice[i] == 2:
-                    par.append(2)
-                    dice.remove(2)
-        if treor > 1:
-            for i in range(len(dice) -1, -1, -1):
-                if dice[i] == 3:
-                    par.append(3)
-                    dice.remove(3)
-        if fyror > 1:
-            for i in range(len(dice) -1, -1, -1):
-                if dice[i] == 4:
-                    par.append(4)
-                    dice.remove(4)
-        if femmor > 1:
-            for i in range(len(dice) -1, -1, -1):
-                if dice[i] == 5:
-                    par.append(5)
-                    dice.remove(5)
-        if sexor > 1:
-            for i in range(len(dice) -1, -1, -1):
-                if dice[i] == 6:
-                    par.append(6)
-                    dice.remove(6)
-        """
 
-        ettor = par.count(1)
-        tvåor = par.count(2)
-        treor = par.count(3)
-        fyror = par.count(4)
-        femmor = par.count(5)
-        sexor = par.count(6)
-        
-        if len(par) >= 2:
-            for alternativ in table:
-                if alternativ == "Par":
-                    if "7. Par" not in choices:
-                        choices.append("7. Par")
 
        
 
-        # är tvåpar?
-        # sortera dices
-        # räkna dices[0] om > 3 går ej
-        # hoppa till nästa som inte har denna valör 2 2  3 5 5
-        # räkna hur många om minst 2 klar
-        # annars hoppa till nästa och räkna
-        
-
-        #2 2 2 5 5
-        #2 2 5 5
-
-
-
-
-
-
-
-            while par.count(a) > 1:     #Jag ska skriva en kod som använder sig av variabler för att kolla om man kan välja par, tvåpar osv.
-                b = a + 1
-                par.count(b)
-                if a == b:
-                    
-
-                    for alternativ in table:
-                        if alternativ == "Två par":
-                            if "8. Två par" in choices:
-                                pass
-
-
-
-        
-        elif len(par) == 4:
-            if par[0] != par[0 - 1]:
-                for alternativ in table:
-                    if alternativ == "Par":
-                        if "7. Par" not in choices:
-                            choices.append("7. Par")
-                            
-            if ettor == 2 or tvåor == 2 or treor == 2 or fyror == 2 or femmor == 2 or sexor == 2:
-                for alternativ in table:
-                    if alternativ == "Två par":
-                        if "8. Två par" in choices:
-                            pass
-                        else:
-                            choices.append("8. Två par")
-            elif ettor == 4 or tvåor == 4 or treor == 4 or fyror == 4 or femmor == 4 or sexor == 4:
-                for alternativ in table:
-                        if alternativ == "Fyrtal":
-                            if "10. Fyrtal" in choices:
-                                pass
-                            else:
-                                choices.inset("10. Fyrtal")
-
-
-        elif len(par) == 3:
-            for alternativ in table:
-                if alternativ == "Tretal":
-                    if "9. Tretal" in choices:
-                        pass
-                    elif "10. Fyrtal" in choices:
-                            choices.insert(9, "9. Tretal")
-                    else:
-                        choices.append("9. Tretal")
-
-
-
-        elif len(par) == 5:
-            ettor = dice.count(1)
-            tvåor = dice.count(2)
-            treor = dice.count(3)
-            fyror = dice.count(4)
-            femmor = dice.count(5)
-            sexor = dice.count(6)
-            if ettor > 1 and ettor < 4 or tvåor > 1 and tvåor < 4 or treor > 1 and treor < 4 or fyror > 1 and fyror < 4 or femmor > 1 and femmor < 4 or sexor > 1 and sexor < 4:
-                for alternativ in table:
-                    if alternativ == "Kåk":
-                        if "11. Kåk" in choices:
-                            pass
-                        else:
-                            choices.append("11. Kåk")
-            elif ettor == 5 or tvåor == 5 or treor == 5 or fyror == 5 or femmor == 5 or sexor == 5:
-                for alternativ in table:
-                    if alternativ == "Yatzy":
-                        if "15. Yatzy" in choices:
-                            pass
-                        else:
-                            choices.append("15. Yatzy")
-
         for alternativ in table:
-                    if alternativ == "Chans":
-                        if "16. Chans" in choices:
-                            pass
-                        else:
-                            choices.append("16. Chans")
-
-                    
+            if alternativ == 15:
+                if "Chans" not in choices:
+                   choices.append("Chans")            
         
 
         print(choices)
 
         sattsning = input("Skriv siffran på alternativet du önskar välja: ")
+
+
 
         if sattsning == "1":
             table.remove("Ettor")
