@@ -1,10 +1,12 @@
 import random
 
+
+
 player = []
 dice = []
 antal = 5
 saved = []
-table = {1: "Ettor", 2: "Tvåor", 3: "Treor", 4: "Fyror", 5: "Femmor", 6: "Sexor", 7: "Par", 8: "Två par", 9: "Tretal", 10: "Fyrtal", 11: "Kåk", 12:"Liten stege", 13:"Stor Stege", 14: "Yatzy", 15: "Chans"}
+table = {1: "Ettor", 2: "Tvåor", 3: "Treor", 4: "Fyror", 5: "Femmor", 6: "Sexor", 7: "Par", 8: "Tretal", 9: "Fyrtal", 10: "Två par", 11: "Kåk", 12:"Liten stege", 13:"Stor Stege", 14: "Yatzy", 15: "Chans"}
 choices = []
 par = []
 poäng_ettor = []
@@ -120,16 +122,16 @@ if svar == "j":
 
         dice = [3, 3, 5, 5, 6]
         print(dice)
-        a = dice[0]
+        variabel = dice[0]
 
-        while a < 7:
-            for k in dice:
-                if k == a:
+        while variabel < 7:
+            for tärning in dice:
+                if tärning == variabel:
                     for alternativ in table:
-                        if alternativ == a:
-                            if table[a] not in choices:
-                                choices.append(table[a])
-            a = a + 1 
+                        if alternativ == variabel:
+                            if table[variabel] not in choices:
+                                choices.append(table[variabel])
+            variabel = variabel + 1 
 
             #jag kom på att det inte fungerar att använda index på det här settet då indexet ändras då när man valt ett alternativ så tas det bort ur listan.
 
@@ -192,17 +194,55 @@ if svar == "j":
         """
 
 
-        a = 1
+        variabel = 1
+        count = 2
 
+        while variabel < 7:
+            for tärning in dice:
+                if dice.count(tärning) == count:
+                    potential = 6 + variabel
+                    for alternativ in table:
+                        if alternativ == table[potential]:
+                            if table[potential] not in choices:
+                                choices.append(table[potential])
+                elif dice.count(tärning) == 5:
+                    for alternativ in table:
+                        if alternativ == "Yatzy":
+                            if "14. Yatzy" not in choices:
+                                choices.append("14. Yatzy")
+            count = count + 1
+            variabel = variabel + 1
 
-        while a < 7:
-            räkning = dice.count(a)
+        while variabel < 7:
+            räkning = dice.count(variabel)
             if räkning > 1:
-                for i in range(len(dice) -1, -1, -1):
-                    if dice[i] == a:
-                        par.append(a)
-                        dice.remove(a)
-            a = a + 1
+                for tärning in range(len(dice) -1, -1, -1):
+                    if dice[tärning] == variabel:
+                        par.append(variabel)
+                        dice.remove(variabel)
+            variabel = variabel + 1
+
+        if len(par) >= 4:
+            if par[0] != par[0 - 1] and len(par) == 4:
+                for alternativ in table:
+                    if alternativ == "Tvåpar":
+                        if "10. Tvåpar" not in choices:
+                            choices.append("10. Tvåpar")  
+            elif par[0] != par[0 - 1] and len(par) == 5:
+                for alternativ in table:
+                    if alternativ == "Kåk":
+                        if "11. Kåk" not in choices:
+                            choices.append("1!. Kåk") 
+
+
+            for alternativ in table:
+                    if alternativ == "Tretal":
+                        if "7. Tretal" not in choices:
+                            choices.append("7. Tretal")
+            
+
+        
+
     
 #En kod som förkortar koden nedan och räknar hur många av ett nummer man har och lägger in dem i listan par som ska beräknas senare.
 
@@ -253,34 +293,26 @@ if svar == "j":
         femmor = par.count(5)
         sexor = par.count(6)
         
-        if len(par) == 2:
+        if len(par) >= 2:
             for alternativ in table:
                 if alternativ == "Par":
-                    if "7. Par" in choices:
-                        pass
-                    else:
+                    if "7. Par" not in choices:
                         choices.append("7. Par")
 
+       
+
+        # är tvåpar?
+        # sortera dices
+        # räkna dices[0] om > 3 går ej
+        # hoppa till nästa som inte har denna valör 2 2  3 5 5
+        # räkna hur många om minst 2 klar
+        # annars hoppa till nästa och räkna
+        
+
+        #2 2 2 5 5
+        #2 2 5 5
 
 
-        if len(par) == 4:
-            if par[0] != par[0 - 1]:
-                for alternativ in table:
-                    if 
-
-                count_down = 1
-                while count_down < 6:
-                    first = 1
-                    par.count(first)
-                    if par.count(first) > 1 and par.count(first) < 4:
-                    
-                    
-
-
-
-
-
-                first = first + 1
 
 
 
@@ -299,6 +331,7 @@ if svar == "j":
 
 
 
+        
         elif len(par) == 4:
             if par[0] != par[0 - 1]:
                 for alternativ in table:

@@ -1,6 +1,15 @@
 Logbok
 ==============
 
+Vecka 19
+--------------
+Jag har skrivit en kod som kollar om man kan välja mellan tvåpar, tretal osv, denna koden börjar på rad 200.
+
+Jag har inte hunnit testa koden och kolla om den fungerar och ska göra det nästa gång.
+
+Jag måste nu bara skriva en kod som kollar om man kan välja stor och lite nstege samt chans.
+
+Jag ska även skriva en extra lista med alternativ där jag kan ta bort alternativen utan att påverka funktionalitetetn av min kod då jag behöver en komplett lista för att köra koden.
 
 
 Vecka 18
