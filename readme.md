@@ -11,6 +11,8 @@ Jag måste nu bara skriva en kod som kollar om man kan välja stor och lite nste
 
 Jag ska även skriva en extra lista med alternativ där jag kan ta bort alternativen utan att påverka funktionalitetetn av min kod då jag behöver en komplett lista för att köra koden.
 
+Tisdag: Jag har suttit och jobbat med att integrera funktioner i min kod och har förkortat koden yterligare, jag har dock inte hunnit testa koden.
+
 
 Vecka 18
 --------------

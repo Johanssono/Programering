@@ -14,6 +14,8 @@ def DiceCounter():
     femmor = dice.count(5)
     sexor = dice.count(6)
 
+    #Måste ändra om och returna ett svar och spara det svaret i en lista.
+
 def PointCounterSmall():
     if sattsning >= 6:
         offer_table.remove(sattsning)
