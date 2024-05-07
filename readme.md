@@ -13,6 +13,8 @@ Jag ska även skriva en extra lista med alternativ där jag kan ta bort alternat
 
 Tisdag: Jag har suttit och jobbat med att integrera funktioner i min kod och har förkortat koden yterligare, jag har dock inte hunnit testa koden.
 
+Jag fick testat koden och den fungerar, så nu kan man spela hela spelet och sedan välja vart man vill lägga påängen på, detta med hjälp av funktioner. Jag har dock inte kommit på ett sätt för att låta en välja att lägga poäng på par och liknande då man ska få välja vilket par man vill lägga påängen på om det finns mer än 1 par. Men alternativet att välja par finns.
+
 
 Vecka 18
 --------------

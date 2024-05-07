@@ -6,39 +6,64 @@ def TillägningAvAlternativ():
                     if table[potential] not in choices:
                         choices.append(table[potential])
 
-def DiceCounter():
-    ettor = dice.count(1)
-    tvåor = dice.count(2)
-    treor = dice.count(3)
-    fyror = dice.count(4)
-    femmor = dice.count(5)
-    sexor = dice.count(6)
+def DiceCounter(tärning):
+    antal = dice.count(tärning)
+    return antal
 
     #Måste ändra om och returna ett svar och spara det svaret i en lista.
 
 def PointCounterSmall():
-    if sattsning >= 6:
+    offer_table.remove(sattsning)
+    for tärning in dice:
+        if tärning == sattsning:
+            points.append(tärning)
+    points = sum(points)
+    if sattsning == 14:
         offer_table.remove(sattsning)
-        for tärning in dice:
-            if tärning == sattsning:
-                poäng.append(tärning)
-        poäng = sum(poäng)
-    elif sattsning == 14:
-        offer_table.remove(sattsning)
-        poäng.append(tärning)
-        poäng = sum(poäng)
+        points.append(tärning)
+        points = sum(points)
+
+"""
+
+def PointCounterPar():
 
 
+
+def nqikrnr():
+    if 
+
+
+if sattsning == 7 and len(par) <= 3:
+        summa = par[0] * 2
+        points.append(summa)
+        points = sum(points)
+
+elif sattsning == 7 and len(par) == 3 or len(par) == 5:
+
+
+
+potential = 1
+
+while potential < 7:
+räkning = dice.count(potential)
+if räkning > 1:
+    for tärning in dice:
+        if tärning == potential:
+            par.append(potential)
+potential = potential + 1
+"""
 
 
 player = []
 dice = []
+antal_tärningar = []
 antal = 5
 saved = []
-table = {1: "Ettor", 2: "Tvåor", 3: "Treor", 4: "Fyror", 5: "Femmor", 6: "Sexor", 7: "Par", 8: "Tretal", 9: "Fyrtal", 10: "Två par", 11: "Kåk", 12:"Liten stege", 13:"Stor Stege", 14: "Yatzy", 15: "Chans"}
-offer_table = ["1. Ettor", "2. Tvåor", "3. Treor", "4. Fyror", "5. Femmor", "6. Sexor", "7. Par", "8. Tretal", "9. Fyrtal", "10. Två par", "11. Kåk", "12. Liten stege", "13. Stor Stege", "14. Yatzy", "15. Chans"]
+table = {1: "1. Ettor", 2: "2. Tvåor", 3: "3. Treor", 4: "4. Fyror", 5: "5. Femmor", 6: "6. Sexor", 7: "7. Par", 8: "8. Tretal", 9: "9. Fyrtal", 10: "10. Två par", 11: "11. Kåk", 12:"12. Liten stege", 13:"13. Stor Stege", 14: "14. Yatzy", 15: "15. Chans"}
+offer_table = ["Ettor", "Tvåor", "Treor", "Fyror", "Femmor", "Sexor", "Par", "Tretal", "Fyrtal", "Två par", "Kåk", "Liten stege", "Stor Stege", "Yatzy", "Chans"]
 choices = []
 par = []
+points = []
 
 
 namn = input("Skriv namn på spelare: ")
@@ -121,7 +146,7 @@ if svar == "j":
                     throw = throw - 1
                     dice.sort()
                     print(dice)
-                    print(table)
+                    print(offer_table)
                     print()
                     kasta = "n"
                     
@@ -169,25 +194,28 @@ if svar == "j":
             count = count + 1
             timer = timer + 1
 
-        DiceCounter()
+        timer = 1
+        while timer < 7:
+            antal_tärningar.append(DiceCounter(timer))
+            timer = timer + 1
 
-        if ettor == 1 and tvåor == 1 and treor == 1 and fyror == 1 and femmor == 1:
+        if antal_tärningar[0] == 1 and antal_tärningar[1] == 1 and antal_tärningar[2] == 1 and antal_tärningar[3] == 1 and antal_tärningar[4] == 1:
             potential = 12
             TillägningAvAlternativ()
 
 
-        elif  tvåor == 1 and treor == 1 and fyror == 1 and femmor == 1 and sexor == 1:
+        elif  antal_tärningar[1] == 1 and antal_tärningar[2] == 1 and antal_tärningar[3] == 1 and antal_tärningar[4] == 1 and antal_tärningar[5] == 1:
             potential = 13
             TillägningAvAlternativ()
 
 
         potential = 1
 
-        while variabel < 7:
+        while potential < 7:
             räkning = dice.count(potential)
             if räkning > 1:
-                for tärning in range:
-                    if dice[tärning] == potential:
+                for tärning in dice:
+                    if tärning == potential:
                         par.append(potential)
             potential = potential + 1
 
@@ -204,8 +232,8 @@ if svar == "j":
 
         for alternativ in table:
             if alternativ == 15:
-                if "Chans" not in choices:
-                   choices.append("Chans")            
+                if table[15] not in choices:
+                   choices.append(table[15])            
         
 
         print(choices)
@@ -213,7 +241,11 @@ if svar == "j":
         sattsning = input("Skriv siffran på alternativet du önskar välja: ")
 
 
-        PointCounterSmall()
+        if sattsning <= 6:
+            PointCounterSmall()
+
+        #behöver komma på ett sätt att räkna vad dem kan välja att ta par på om det finns mer än 1 par och liknande.
+
 
 
 
