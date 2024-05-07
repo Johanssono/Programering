@@ -1,5 +1,32 @@
 import random
 
+def TillägningAvAlternativ():
+    for alternativ in table:
+                if alternativ == potential:
+                    if table[potential] not in choices:
+                        choices.append(table[potential])
+
+def DiceCounter():
+    ettor = dice.count(1)
+    tvåor = dice.count(2)
+    treor = dice.count(3)
+    fyror = dice.count(4)
+    femmor = dice.count(5)
+    sexor = dice.count(6)
+
+def PointCounterSmall():
+    if sattsning >= 6:
+        offer_table.remove(sattsning)
+        for tärning in dice:
+            if tärning == sattsning:
+                poäng.append(tärning)
+        poäng = sum(poäng)
+    elif sattsning == 14:
+        offer_table.remove(sattsning)
+        poäng.append(tärning)
+        poäng = sum(poäng)
+
+
 
 
 player = []
@@ -7,15 +34,10 @@ dice = []
 antal = 5
 saved = []
 table = {1: "Ettor", 2: "Tvåor", 3: "Treor", 4: "Fyror", 5: "Femmor", 6: "Sexor", 7: "Par", 8: "Tretal", 9: "Fyrtal", 10: "Två par", 11: "Kåk", 12:"Liten stege", 13:"Stor Stege", 14: "Yatzy", 15: "Chans"}
-table_offer = ["Ettor", "Tvåor", "Treor", "Fyror", "Femmor", "Sexor", "Par", "Tretal", "Fyrtal", "Två par", "Kåk", "Liten stege", "Stor Stege", "Yatzy", "Chans"]
+offer_table = ["1. Ettor", "2. Tvåor", "3. Treor", "4. Fyror", "5. Femmor", "6. Sexor", "7. Par", "8. Tretal", "9. Fyrtal", "10. Två par", "11. Kåk", "12. Liten stege", "13. Stor Stege", "14. Yatzy", "15. Chans"]
 choices = []
 par = []
-poäng_ettor = []
-poäng_tvåor = []
-poäng_treor = []
-poäng_fyror = []
-poäng_femmor = []
-poäng_sexor = []
+
 
 namn = input("Skriv namn på spelare: ")
 player.append(namn)
@@ -72,7 +94,6 @@ if svar == "j":
                     remove_dice = input("Vill du ta bort några tärningar? j/n: ")
 
 
-
                     while remove_dice == "j":
                         delete = input("1, 2, 3, 4, 5 eller 6? ")
                         for tal in dice:
@@ -116,18 +137,13 @@ if svar == "j":
 
         dice = [5, 5, 5, 5, 5]
         print(dice)
-        variabel = dice[0]
+        potential = dice[0]
 
-        while variabel < 7:
+        while potential < 7:
             for tärning in dice:
-                if tärning == variabel:
-                    for alternativ in table:
-                        if alternativ == variabel:
-                            if table[variabel] not in choices:
-                                choices.append(table[variabel])
-            variabel = variabel + 1 
-
-            #jag kom på att det inte fungerar att använda index på det här settet då indexet ändras då när man valt ett alternativ så tas det bort ur listan.
+                if tärning == potential:
+                    TillägningAvAlternativ()
+            potential = potential + 1
 
 
 #Jag föränklade koden nedan för att minska mängden kod att underhålla, detta gjorde jag genom en while loop som ökar värden för 
@@ -137,75 +153,52 @@ if svar == "j":
 
 
 
-        variabel = 1
+        timer = 1
         count = 2
 
-        while variabel < 3:
+        while timer < 3:
             for tärning in dice:
                 if dice.count(tärning) == count:
-                    potential = 6 + variabel
-                    for alternativ in table:
-                        if alternativ == potential:
-                            if table[potential] not in choices:
-                                choices.append(table[potential])
+                    potential = 6 + timer
+                    TillägningAvAlternativ()
                 elif dice.count(tärning) == 5:
-                    for alternativ in table:
-                        if alternativ == 14:
-                            if "Yatzy" not in choices:
-                                choices.append("Yatzy")
+                    potential = 15
+                    TillägningAvAlternativ()
             count = count + 1
-            variabel = variabel + 1
+            timer = timer + 1
 
-        ettor = dice.count(1)
-        tvåor = dice.count(2)
-        treor = dice.count(3)
-        fyror = dice.count(4)
-        femmor = dice.count(5)
-        sexor = dice.count(6)
+        DiceCounter()
 
         if ettor == 1 and tvåor == 1 and treor == 1 and fyror == 1 and femmor == 1:
-            for alternativ in table:
-                        if alternativ == 12:
-                            if "Liten stege" not in choices:
-                                choices.append("Liten stege")
+            potential = 12
+            TillägningAvAlternativ()
+
+
         elif  tvåor == 1 and treor == 1 and fyror == 1 and femmor == 1 and sexor == 1:
-            for alternativ in table:
-                        if alternativ == 13:
-                            if "Stor stege" not in choices:
-                                choices.append("Stor stege")
+            potential = 13
+            TillägningAvAlternativ()
 
 
-        variabel = 1
+        potential = 1
 
         while variabel < 7:
-            räkning = dice.count(variabel)
+            räkning = dice.count(potential)
             if räkning > 1:
-                for tärning in range(len(dice) -1, -1, -1):
-                    if dice[tärning] == variabel:
-                        par.append(variabel)
-                        dice.remove(variabel)
-            variabel = variabel + 1
+                for tärning in range:
+                    if dice[tärning] == potential:
+                        par.append(potential)
+            potential = potential + 1
+
 
         if len(par) >= 4:
             if par[0] != par[0 - 1] and len(par) == 4:
-                for alternativ in table:
-                    if alternativ == 10:
-                        if "Två par" not in choices:
-                            choices.append("Två par")  
+                potential = 10
+                TillägningAvAlternativ()
+
             elif par[0] != par[0 - 1] and len(par) == 5:
-                for alternativ in table:
-                    if alternativ == 11:
-                        if "Kåk" not in choices:
-                            choices.append("Kåk") 
+                potential = 11
+                TillägningAvAlternativ
 
-
-            
-    
-#En kod som förkortar koden nedan och räknar hur många av ett nummer man har och lägger in dem i listan par som ska beräknas senare.
-
-
-
-       
 
         for alternativ in table:
             if alternativ == 15:
@@ -218,48 +211,12 @@ if svar == "j":
         sattsning = input("Skriv siffran på alternativet du önskar välja: ")
 
 
+        PointCounterSmall()
 
-        if sattsning == "1":
-            table.remove("Ettor")
-            for etta in dice:
-                if etta == 1:
-                    poäng_ettor.append(1)
-            poäng_ettor = sum(poäng_ettor)
 
-        elif sattsning == "2":
-            table.remove(Tvåor)
-            for tvåa in dice:
-                if tvåa == 2:
-                    poäng_tvåor.append(2)
-            poäng_tvåor = sum(poäng_tvåor)
 
-        elif sattsning == "3":
-            table.remove(Treor)
-            for tvåa in dice:
-                if etta == 3:
-                    poäng_tvåor.append(3)
-            poäng_treor = sum(poäng_treor)
 
-        elif sattsning == "4":
-            table.remove(Fyror)
-            for tvåa in dice:
-                if etta == 4:
-                    poäng_tvåor.append(4)
-            poäng_fyror = sum(poäng_fyror)
-
-        elif sattsning == "5":
-            table.remove(Femmor)
-            for tvåa in dice:
-                if etta == 5:
-                    poäng_tvåor.append(5)
-            poäng_femmor = sum(poäng_femmor)
-
-        elif sattsning == "6":
-            table.remove(Sexor)
-            for tvåa in dice:
-                if etta == 6:
-                    poäng_tvåor.append(6)
-            poäng_sexor = sum(poäng_sexor)
+       
 
         dice = []
         choices = []
