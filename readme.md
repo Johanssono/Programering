@@ -15,6 +15,15 @@ Tisdag: Jag har suttit och jobbat med att integrera funktioner i min kod och har
 
 Jag fick testat koden och den fungerar, så nu kan man spela hela spelet och sedan välja vart man vill lägga påängen på, detta med hjälp av funktioner. Jag har dock inte kommit på ett sätt för att låta en välja att lägga poäng på par och liknande då man ska få välja vilket par man vill lägga påängen på om det finns mer än 1 par. Men alternativet att välja par finns.
 
+Jag har nu suttit och fixat så att allting fungerar som det ska, men har några små saker kvar att fixa. Vissa saker vill inte läggas ihop och vissa listor kan inte använda apend. Men jag löste hur jag skulle göra för att göra så att mina funktioner kan använda variabler från varandra genom att använda global, men då det inte är god praxis måste jag komma på ett annat sätt, det är bara en temporär lösning just nu.
+
+Här är en lista på länkar som jag använde mig av för att lösa problemen:
+https://stackoverflow.com/questions/74412503/cannot-access-local-variable-a-where-it-is-not-associated-with-a-value-but
+https://www.codecademy.com/learn/flask-introduction-to-python/modules/learn-python3-functions/cheatsheet
+https://stackoverflow.com/questions/11462314/what-are-alternatives-to-global-variables-for-sharing-values-between-functions-i
+https://stackoverflow.com/questions/32542589/typeerror-unsupported-operand-types-for-int-and-list
+https://www.freecodecamp.org/news/int-object-is-not-iterable-python-error-solved/
+
 
 Vecka 18
 --------------
