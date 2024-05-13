@@ -6,6 +6,8 @@ Vecka 20
 Idag har jag fixat så att koden går att köra, detta genom att ändra så att jag aldrig ändrar mina poänglistor till tal, sedan har jag även kommenterat koden för att göra det enklare att läsa koden.
 Jag fixade även så att bonus timern fungerar och uträkningen för bonusen genom att flytta ut dem ur funktionen som räknar poäng till vilkåren 1.6 och sätta det i en If sats utanför.
 
+ska kolla på att använda try kommandot istället för input när man ska välja alternativ och liknande.
+
 
 Vecka 19
 --------------
