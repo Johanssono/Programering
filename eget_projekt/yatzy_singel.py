@@ -3,6 +3,7 @@ import random
 
 
 def TillägningAvAlternativ(potential):
+    """Lägger till alternativ i listan choices där spelaren sedan väljer vilkår att lägga poängen på."""
     for alternativ in table:
         if alternativ == potential:
             if table[potential] not in choices:
@@ -10,49 +11,42 @@ def TillägningAvAlternativ(potential):
     return potential
 
 def DiceCounter(tärning):
+    """Räknar ut antalet av varge tärning i listan"""
     antal = dice.count(tärning)
     return antal
 
     #Måste ändra om och returna ett svar och spara det svaret i en lista.
 
 def BonusCounter():
+    """Räknar ut om spelaren har mött kriterierna för att motag bonusen"""
     if sum(points) >= 63:
         points_total.append(50)
-    points_total = sum(points_total)
 
 def YatzyCounter():
-        points_total.append(50)
-        points_total = sum(points_total)
+    """Används för att räkna ut apelarens poäng vid val av vilkår 14"""    
+    points_total.append(50)
 
-def SmalPointCounter(sattsning):
-    global bonus_countdown
-    global points
-    global points_total
-
+def SmalPointCounter(sattsning, points, points_total):
     #borde ientiligen inte använda "global", måste komma på ett annat sätt att ge funktionerna tillgång till listorna som dem arbetar med.
-
+    """Funktionen räknar ut poängen om spelaren har valt att lägga poängen på vilkår 1-6 och lägger till dem i listan med poäng"""
     for tärning in dice:
         if tärning == sattsning:
             points.append(tärning)
             points_total.append(tärning)
             #points_total räknas som en integer och kan inte använda sig av kommandot append.
-    points = sum(points)
-    points_total = sum(points_total)
-    bonus_countdown = bonus_countdown - 1
-    if bonus_countdown == 0:
-        BonusCounter()
     if sattsning == 14:
         YatzyCounter()
 
 def NumberCounter(val):
+    """Funktionen räknar antalet av varge siffra i listan med par och används för att räkna ut spelarens poäng beroende på val innom vilkåren 7-9"""
     for siffra in par:
         if par.count(siffra) >= val and siffra not in second_choice:
             second_choice.append(siffra)   
             return siffra
 
 
-def ParCounter(sattsning):
-    global points_total
+def ParCounter(sattsning, points_total):
+    """Funktionen räknar ut poängen om spelaren har valt att lägga poängen på vilkår 7 och lägger till dem i listan med poäng"""
     NumberCounter(2)
     if len(second_choice) > 1:
         while sattsning_2 not in second_choice:
@@ -61,57 +55,65 @@ def ParCounter(sattsning):
     else:
         points_total.append(second_choice[0])
             
-    points_total = sum(points_total)
 
 
-def AvragePointCounter(sattsning):
-    global points_total
+def AvragePointCounter(sattsning, points_total):
+    """Funktionen räknar ut pängenen om spelaren valt att lägga poängen på vilkår 8 eller 9 och legger till det i listan med poäng"""
     tal = sattsning - 5
     points_total.append(NumberCounter(tal) * tal)
-    points_total = sum(points_total)
 
 
-def BigPointCounter(sattsning):
-    global points_total
-
+def BigPointCounter(sattsning, points_total):
+    """Funktionen räknar ut poängen om spelaren har valt att lägga poängen på vilkår 10-15 och lägger till dem i listan med poäng """
     if sattsning == 10:
         points_total.append(par[0] * 2 + par[-1] * 2)
-        points_total = sum(points_total)
-
-    if sattsning > 10:
+    elif sattsning > 10 and sattsning != 15:
         points_total.append(sum(par))
-        points_total = sum(points_total)
+    elif sattsning == 15:
+        points_total.append(sum(dice))
 
 def ChoiseOfPointCounter(sattsning):
+    """Funktionen används för att räkna ut vilken räknefunktion som ska användas beroende på vilket vilkår spelaren valde 
+    och tar bort detta alternativet så det inte kan väljas igen"""
     table.pop(sattsning)
     if sattsning <=6:
-        SmalPointCounter(sattsning)
+        SmalPointCounter(sattsning, points, points_total)
     elif sattsning == 7:
-        ParCounter(sattsning)
+        ParCounter(sattsning, points_total)
     elif sattsning  == 8 or sattsning == 9:
-        AvragePointCounter(sattsning)
+        AvragePointCounter(sattsning, points_total)
     elif sattsning > 9:
-        BigPointCounter(sattsning)
+        BigPointCounter(sattsning, points_total)
 
 def Punishment():
+    """Funktionen straffar spelaren om spelaren inte har tärningar som passar med något kvarstående alternativ, 
+    detta genom att tvinga spelaren stryka ett alternativ ur listan med kvarvarande alternativ"""
     print(table)
-    sacrifice = print("Skriv siffran på den du vill stryka")
+    sacrifice = input("Skriv siffran på den du vill stryka")
     table.pop(sacrifice)
 
-
+"""Lista med poäng på vilkår 1-6 och används för att räkna ut om spelaren är behörig att få bonusen"""
 points = []
+"""En lista med den totala mängden poäng"""
 points_total = []
+"En lista på spelare"
 player = []
 dice = []
+"""En lista på antalet tärningar spelaren kan kasta efter att ha sparat tärningar"""
 antal_tärningar = []
 antal = 5
+"""En lista på sparade tärningar mellan kast"""
 saved = []
+"""En lista med alla alternativ som spelaren kan välja ifrån, används för att räkna ut valmöjligheter för spelaren"""
 table = {1: "1. Ettor", 2: "2. Tvåor", 3: "3. Treor", 4: "4. Fyror", 5: "5. Femmor", 6: "6. Sexor", 7: "7. Par", 8: "8. Tretal", 9: "9. Fyrtal", 10: "10. Två par", 11: "11. Kåk", 12:"12. Liten stege", 13:"13. Stor Stege", 14: "14. Yatzy", 15: "15. Chans"}
+"""En lista som innehåller alla alternativ och används för att ta bort och strycka alternativ och visar spelaren vilka kvarstående alternativ som finns kvar"""
 offer_table = {1: "1. Ettor", 2: "2. Tvåor", 3: "3. Treor", 4: "4. Fyror", 5: "5. Femmor", 6: "6. Sexor", 7: "7. Par", 8: "8. Tretal", 9: "9. Fyrtal", 10: "10. Två par", 11: "11. Kåk", 12:"12. Liten stege", 13:"13. Stor Stege", 14: "14. Yatzy", 15: "15. Chans"}
+"""EN lista med alternativen som spelaren har att välja mellan"""
 choices = []
 second_choice = []
 par = []
 
+"""En nedräkning för att avgöra om spelaren är behörig till en bonus"""
 bonus_countdown = 6
 
 namn = input("Skriv namn på spelare: ")
@@ -210,7 +212,6 @@ if svar == "j":
 
     #När ett alternativ är valt eller struket, ska listan ta bort detta alternativ och spara det i den slutgiltiga listan.
     #Sedan ska spelaren presenteras med den slutgiltiga listan och summan av poängen.
-        dice = [2]
         print(dice)
         potential_choice = dice[0]
 
@@ -289,14 +290,18 @@ if svar == "j":
             sattsning = int(input("Skriv siffran på alternativet du önskar välja: "))
             ChoiseOfPointCounter(sattsning)
 
+            if sattsning > 0 and sattsning < 6:
+                bonus_countdown = bonus_countdown - 1
+                if bonus_countdown == 0:
+                    BonusCounter()
+
         #behöver komma på ett sätt att räkna vad dem kan välja att ta par på om det finns mer än 1 par och liknande.
 
-        if points[0] > 0:
+        if sum(points) > 0:
 
-        #Av någon anledning kan man inte räkna en lista som ett integer, måste fixa det ellet komma på ett annat sätt att avgöra om man ska säga vad dem har för poäng på vilkår 1-6
-            print("Dina samanlagda poäng i vilkår 1-6: ", points)
+            print("Dina samanlagda poäng i vilkår 1-6: ", sum(points))
         
-        print("Dina sammanlagda poäng i alla vilkår: ", points_total)
+        print("Dina sammanlagda poäng i alla vilkår: ", sum(points_total))
 
 
 
