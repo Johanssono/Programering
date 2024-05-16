@@ -1,12 +1,21 @@
 Logbok
 ==============
 
+
+Vecka 21
+--------------
+
+
 Vecka 20
 --------------
 Idag har jag fixat så att koden går att köra, detta genom att ändra så att jag aldrig ändrar mina poänglistor till tal, sedan har jag även kommenterat koden för att göra det enklare att läsa koden.
 Jag fixade även så att bonus timern fungerar och uträkningen för bonusen genom att flytta ut dem ur funktionen som räknar poäng till vilkåren 1.6 och sätta det i en If sats utanför.
 
 ska kolla på att använda try kommandot istället för input när man ska välja alternativ och liknande.
+
+Jag har nu börjat att göra med att arbeta så man kan vara fler spelare, detta ska jag försöka göra objektorienterat.
+
+Jag vet inte riktigt vad jag behöver göra för att, och förstår inte riktigt hur det fungerar. Men jag ska försöka jobba med det och lämna in i tid, Rikard sa att man kunde lämna in senast måndag V 22.
 
 
 Vecka 19

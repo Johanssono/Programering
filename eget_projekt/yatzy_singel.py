@@ -106,8 +106,6 @@ antal = 5
 saved = []
 """En lista med alla alternativ som spelaren kan välja ifrån, används för att räkna ut valmöjligheter för spelaren"""
 table = {1: "1. Ettor", 2: "2. Tvåor", 3: "3. Treor", 4: "4. Fyror", 5: "5. Femmor", 6: "6. Sexor", 7: "7. Par", 8: "8. Tretal", 9: "9. Fyrtal", 10: "10. Två par", 11: "11. Kåk", 12:"12. Liten stege", 13:"13. Stor Stege", 14: "14. Yatzy", 15: "15. Chans"}
-"""En lista som innehåller alla alternativ och används för att ta bort och strycka alternativ och visar spelaren vilka kvarstående alternativ som finns kvar"""
-offer_table = {1: "1. Ettor", 2: "2. Tvåor", 3: "3. Treor", 4: "4. Fyror", 5: "5. Femmor", 6: "6. Sexor", 7: "7. Par", 8: "8. Tretal", 9: "9. Fyrtal", 10: "10. Två par", 11: "11. Kåk", 12:"12. Liten stege", 13:"13. Stor Stege", 14: "14. Yatzy", 15: "15. Chans"}
 """EN lista med alternativen som spelaren har att välja mellan"""
 choices = []
 second_choice = []
@@ -316,78 +314,3 @@ if svar == "j":
 
 else:
     print("hej då")
-
-    #tärning_2 = random.randrange(1, 7)
-    #dice.append(tärning_2)
-
-    #tärning_3 = random.randrange(1, 7)
-    #dice.append(tärning_3)
-
-    #tärning_4 = random.randrange(1, 7)
-    #dice.append(tärning_4)
-
-    #tärning_5 = random.randrange(1, 7)
-    #dice.append(tärning_5)
-
-
-
-
-"""
-
-        if b == 1:
-            b = 0
-            a = dice[1+1]
-            for g in dice:
-                if g == a:
-                    b = b + 1
-        elif b == 2:
-            a = dice[2]
-            for g in dice:
-                if g == a:
-                    c = c + 1
-        elif c == 1:
-            a = dice[3]
-            for g in dice:
-                if g == a:
-                    c = c + 1
-        elif b == 3:
-            a = dice[3]
-            for g in dice:
-                if g == a:
-                    c = c + 1
-
-        if b == 2 or c == 3:
-            if "7. par" in choices:
-                pass
-            else:
-                choices.append("7. par")
-
-        if b == 2 and c == 2:
-            if "8. Två par" in choices:
-                pass
-            else:
-                choices.append("8. Två par")
-        
-        elif b == 3 or c == 3:
-            if "9. Tretal" in choices:
-                pass
-            else:
-                choices.append("9. Tretal")
-
-        if b == 4 or c == 4:
-            if "10. fyrtal" in choices:
-                pass
-            else:
-                choices.append("10. fyrtal")
-        
-        elif b == 2 and c == 3 or b == 3 and c == 2:
-            if "11. Kåk" in choices:
-                pass
-            else:
-                choices.append("11. Kåk")
-
-## måst fixa så att om man har 2 par ska man kunna välja vilka som man vill lägga på par
-
-
-
-         """      
