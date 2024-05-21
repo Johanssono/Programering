@@ -160,6 +160,68 @@ if svar == "j":
                                 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    #Måste göra så att man kan ta bort en 6 om det finns 2 i listan
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                         
                         print(dice)
                         if len(saved) > 0:
