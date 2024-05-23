@@ -121,6 +121,93 @@ svar = input("Vill du spela ett spel? j/n: ")
 
 if svar == "j":
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#skapa while loopar så man kan srkiva fel utan att spelet avbryts
+
+#göra så att när spelet går in i andra omgången så ska man inte få frågan om man vill spela ett spel, utan bara om man vill kasta tärningarna
+
+#fixa så man kan spela fler än 1 person
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     while svar == "j":
         antal = 0
         throw = 3
@@ -145,84 +232,21 @@ if svar == "j":
 
                         print(dice)
                         save = int(input("vilka vill du spara? 1, 2, 3, 4, 5 eller 6: "))
+                        amount = int(input("Hur många av den valda siffran vill du spara? 1, 2, 3, 4 eller 5: "))
 
                         
                         for i in range(len(dice) -1, -1, -1):
-                            if dice[i] == save:
+                            if dice[i] == save and amount > 0:
                                 saved.append(save)
                                 dice.remove(save)
+                                amount = amount - 1
 
                                 
                                 # Denna for slinga kollar igenom listan "dice" och lägger in dem i 
                                 # listan "saved", men for slingan kollar igenom listan "dice" backlänges 
                                 # för att int ändra index-värdet hos objekten i listan och garantera att 
                                 # alla bjekt av samma värde tas bort oavsätt index
-                                
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                    #Måste göra så att man kan ta bort en 6 om det finns 2 i listan
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                        
+                                                        
                         print(dice)
                         if len(saved) > 0:
                             save_dice = input("Vill du spara några fler tärningar? j/n: ")
@@ -234,9 +258,12 @@ if svar == "j":
 
                     while remove_dice == "j":
                         delete = input("1, 2, 3, 4, 5 eller 6? ")
-                        for tal in dice:
-                            if (tal == delete):
-                                delete.remove(tal)
+                        amount = int(input("Hur många av den valda siffran vill du spara? 1, 2, 3, 4 eller 5: "))
+                        for i in range(len(dice) -1, -1, -1):
+                            if dice[i] == delete and amount > 0:
+                                saved.remove(save)
+                                dice.append(save)
+                                amount = amount - 1
                         
                         print("sparade tärningar: ", saved)
                     
@@ -278,6 +305,7 @@ if svar == "j":
         while potential_choice < 7:
             for tärning in dice:
                 if tärning == potential_choice:
+                    #tillägning_av_alternativ Python PEP: https://peps.python.org/pep-0008/
                     TillägningAvAlternativ(potential_choice)
             potential_choice = potential_choice + 1
 
