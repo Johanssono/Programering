@@ -117,7 +117,9 @@ bonus_countdown = 6
 namn = input("Skriv namn på spelare: ")
 player.append(namn)
 
-svar = input("Vill du spela ett spel? j/n: ")
+svar = "k"
+while svar !="j" or svar !="n":
+    svar = input("Vill du spela ett spel? j/n: ")
 
 if svar == "j":
 
@@ -213,8 +215,10 @@ if svar == "j":
         throw = 3
 
         while throw > 0:
-            
-            kasta = input("Vill du kasta tärningarna? j/n: ")
+
+            kasta = "k"
+            while kasta !="j" or kasta !="n":
+                kasta = input("Vill du kasta tärningarna? j/n: ")
             
             while kasta == "j":
                 while antal < 5:
@@ -226,13 +230,37 @@ if svar == "j":
                 
                     print(dice)
 
-                    save_dice = input("Vill du spara några tärningar? j/n: ")
+                    save_dice = "k"
+                    while save_dice !="j" or save_dice !="n":
+                        save_dice = input("Vill du spara några tärningar? j/n: ")
 
                     while save_dice == "j":
-
-                        print(dice)
-                        save = int(input("vilka vill du spara? 1, 2, 3, 4, 5 eller 6: "))
-                        amount = int(input("Hur många av den valda siffran vill du spara? 1, 2, 3, 4 eller 5: "))
+                        save = "k"
+                        while True:
+                            print(dice)
+                            save = int(input("vilka vill du spara? 1, 2, 3, 4, 5 eller 6: "))
+                            if save < 7:
+                                amount = int(input("Hur många av den valda siffran vill du spara? 1, 2, 3, 4 eller 5: "))
+                                if object.equals()
+                                #
+                                #
+                                #
+                                #
+                                ###
+                                #
+                                #
+                                #
+                                #
+                                #
+                                ##
+                                #
+                                #
+                                #
+                                #
+                                ###
+                                #
+                                #
+                            
 
                         
                         for i in range(len(dice) -1, -1, -1):
