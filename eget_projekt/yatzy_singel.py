@@ -2,7 +2,7 @@ import random
 
 
 
-def TillägningAvAlternativ(potential):
+def tillägning_av_alternativ(potential):
     """Lägger till alternativ i listan choices där spelaren sedan väljer vilkår att lägga poängen på."""
     for alternativ in table:
         if alternativ == potential:
@@ -10,23 +10,23 @@ def TillägningAvAlternativ(potential):
                 choices.append(table[potential])
     return potential
 
-def DiceCounter(tärning):
+def dice_counter(tärning):
     """Räknar ut antalet av varge tärning i listan"""
     antal = dice.count(tärning)
     return antal
 
     #Måste ändra om och returna ett svar och spara det svaret i en lista.
 
-def BonusCounter():
+def bonus_counter():
     """Räknar ut om spelaren har mött kriterierna för att motag bonusen"""
     if sum(points) >= 63:
         points_total.append(50)
 
-def YatzyCounter():
+def yatzy_counter():
     """Används för att räkna ut apelarens poäng vid val av vilkår 14"""    
     points_total.append(50)
 
-def SmalPointCounter(sattsning, points, points_total):
+def smal_point_counter(sattsning, points, points_total):
     #borde ientiligen inte använda "global", måste komma på ett annat sätt att ge funktionerna tillgång till listorna som dem arbetar med.
     """Funktionen räknar ut poängen om spelaren har valt att lägga poängen på vilkår 1-6 och lägger till dem i listan med poäng"""
     for tärning in dice:
@@ -35,35 +35,42 @@ def SmalPointCounter(sattsning, points, points_total):
             points_total.append(tärning)
             #points_total räknas som en integer och kan inte använda sig av kommandot append.
     if sattsning == 14:
-        YatzyCounter()
+        yatzy_counter()
 
-def NumberCounter(val):
+def number_counter(val):
     """Funktionen räknar antalet av varge siffra i listan med par och används för att räkna ut spelarens poäng beroende på val innom vilkåren 7-9"""
     for siffra in par:
         if par.count(siffra) >= val and siffra not in second_choice:
-            second_choice.append(siffra)   
-            return siffra
+            if val == 2:
+                second_choice.append(siffra)
+            else:
+                return siffra
+    if val == 2:
+        return second_choice
 
-
-def ParCounter(sattsning, points_total):
+def par_counter(sattsning, points_total, second_choice):
     """Funktionen räknar ut poängen om spelaren har valt att lägga poängen på vilkår 7 och lägger till dem i listan med poäng"""
-    NumberCounter(2)
+    number_counter(2)
     if len(second_choice) > 1:
-        while sattsning_2 not in second_choice:
-            sattsning_2 = input("Skriv siffran som du vill ha par på")
+        midget = True
+        while midget == True:
+            print(second_choice)
+            sattsning_2 = int(input("Skriv siffran som du vill ha par på: "))
+            if sattsning_2 in second_choice:
+                midget = False
         points_total.append(sattsning_2 * 2)
     else:
-        points_total.append(second_choice[0])
+        points_total.append(second_choice[0] * 2)
             
 
 
-def AvragePointCounter(sattsning, points_total):
+def average_point_counter(sattsning, points_total):
     """Funktionen räknar ut pängenen om spelaren valt att lägga poängen på vilkår 8 eller 9 och legger till det i listan med poäng"""
     tal = sattsning - 5
-    points_total.append(NumberCounter(tal) * tal)
+    points_total.append(number_counter(tal) * tal)
 
 
-def BigPointCounter(sattsning, points_total):
+def big_point_counter(sattsning, points_total):
     """Funktionen räknar ut poängen om spelaren har valt att lägga poängen på vilkår 10-15 och lägger till dem i listan med poäng """
     if sattsning == 10:
         points_total.append(par[0] * 2 + par[-1] * 2)
@@ -72,25 +79,30 @@ def BigPointCounter(sattsning, points_total):
     elif sattsning == 15:
         points_total.append(sum(dice))
 
-def ChoiseOfPointCounter(sattsning):
+def counter_chooser(sattsning):
     """Funktionen används för att räkna ut vilken räknefunktion som ska användas beroende på vilket vilkår spelaren valde 
     och tar bort detta alternativet så det inte kan väljas igen"""
     table.pop(sattsning)
     if sattsning <=6:
-        SmalPointCounter(sattsning, points, points_total)
+        smal_point_counter(sattsning, points, points_total)
     elif sattsning == 7:
-        ParCounter(sattsning, points_total)
+        par_counter(sattsning, points_total, second_choice)
     elif sattsning  == 8 or sattsning == 9:
-        AvragePointCounter(sattsning, points_total)
+        average_point_counter(sattsning, points_total)
     elif sattsning > 9:
-        BigPointCounter(sattsning, points_total)
+        big_point_counter(sattsning, points_total)
 
-def Punishment():
+def punishment():
     """Funktionen straffar spelaren om spelaren inte har tärningar som passar med något kvarstående alternativ, 
     detta genom att tvinga spelaren stryka ett alternativ ur listan med kvarvarande alternativ"""
     print(table)
     sacrifice = input("Skriv siffran på den du vill stryka")
     table.pop(sacrifice)
+
+def type_checker_srt():
+    if isinstance(kasta, str) and kasta == "j" or kasta == "n":
+
+def type_checker_int():
 
 """Lista med poäng på vilkår 1-6 och används för att räkna ut om spelaren är behörig att få bonusen"""
 points = []
@@ -118,7 +130,7 @@ namn = input("Skriv namn på spelare: ")
 player.append(namn)
 
 svar = "k"
-while svar !="j" or svar !="n":
+while svar !="j" and svar !="n":
     svar = input("Vill du spela ett spel? j/n: ")
 
 if svar == "j":
@@ -217,7 +229,7 @@ if svar == "j":
         while throw > 0:
 
             kasta = "k"
-            while kasta !="j" or kasta !="n":
+            while kasta !="j" and kasta !="n":
                 kasta = input("Vill du kasta tärningarna? j/n: ")
             
             while kasta == "j":
@@ -231,38 +243,20 @@ if svar == "j":
                     print(dice)
 
                     save_dice = "k"
-                    while save_dice !="j" or save_dice !="n":
+                    while save_dice !="j" and save_dice !="n":
                         save_dice = input("Vill du spara några tärningar? j/n: ")
 
                     while save_dice == "j":
-                        save = "k"
-                        while True:
+
+                        midget = True
+                        while midget == True:
                             print(dice)
                             save = int(input("vilka vill du spara? 1, 2, 3, 4, 5 eller 6: "))
-                            if save < 7:
+                            if isinstance(save, int) and save < 7:
                                 amount = int(input("Hur många av den valda siffran vill du spara? 1, 2, 3, 4 eller 5: "))
-                                if object.equals()
-                                #
-                                #
-                                #
-                                #
-                                ###
-                                #
-                                #
-                                #
-                                #
-                                #
-                                ##
-                                #
-                                #
-                                #
-                                #
-                                ###
-                                #
-                                #
-                            
-
-                        
+                                if isinstance(amount, int) and amount < 6:
+                                    midget = False
+   
                         for i in range(len(dice) -1, -1, -1):
                             if dice[i] == save and amount > 0:
                                 saved.append(save)
@@ -277,16 +271,25 @@ if svar == "j":
                                                         
                         print(dice)
                         if len(saved) > 0:
-                            save_dice = input("Vill du spara några fler tärningar? j/n: ")
+                            midget = True
+                            while midget == True:
+                                save_dice = input("Vill du spara några fler tärningar? j/n: ")
+                                if isinstance(save_dice, str) and save_dice == "j" or save_dice == "n":
+                                    midget = False
 
                     print("sparade tärningar: ", saved)
                     
-                    remove_dice = input("Vill du ta bort några tärningar? j/n: ")
-
+                    midget = True
+                    while midget == True:
+                        remove_dice = input("Vill du ta bort några tärningar? j/n: ")
+                        if isinstance(remove_dice, str) and remove_dice == "j" or remove_dice == "n":
+                            midget = False
 
                     while remove_dice == "j":
                         delete = input("1, 2, 3, 4, 5 eller 6? ")
+                        
                         amount = int(input("Hur många av den valda siffran vill du spara? 1, 2, 3, 4 eller 5: "))
+                        
                         for i in range(len(dice) -1, -1, -1):
                             if dice[i] == delete and amount > 0:
                                 saved.remove(save)
@@ -295,8 +298,11 @@ if svar == "j":
                         
                         print("sparade tärningar: ", saved)
                     
-                        remove_dice = input("Vill du ta bort några tärningar? j/n: ")
-
+                        midget = True
+                        while midget == True:
+                            remove_dice = input("Vill du ta bort några fler tärningar? j/n: ")
+                            if isinstance(remove_dice, str) and remove_dice == "j" or remove_dice == "n":
+                                midget = False
                     dice = []
 
                     dice.extend(saved)
@@ -306,7 +312,12 @@ if svar == "j":
                     throw = throw - 1
 
                     saved = []
-                    kasta = input("Vill du kasta tärningarna? j/n: ")
+                    
+                    midget = True
+                    while midget == True:
+                        kasta = input("Vill du kasta tärningarna? j/n: ")
+                        if isinstance(kasta, str) and kasta == "j" or kasta == "n":
+                            midget = False
                 
                 else:
                     throw = throw - 1
@@ -327,6 +338,7 @@ if svar == "j":
 
     #När ett alternativ är valt eller struket, ska listan ta bort detta alternativ och spara det i den slutgiltiga listan.
     #Sedan ska spelaren presenteras med den slutgiltiga listan och summan av poängen.
+
         print(dice)
         potential_choice = dice[0]
 
@@ -334,7 +346,7 @@ if svar == "j":
             for tärning in dice:
                 if tärning == potential_choice:
                     #tillägning_av_alternativ Python PEP: https://peps.python.org/pep-0008/
-                    TillägningAvAlternativ(potential_choice)
+                    tillägning_av_alternativ(potential_choice)
             potential_choice = potential_choice + 1
 
 
@@ -348,27 +360,27 @@ if svar == "j":
         timer = 1
         count = 2
 
-        while timer < 3:
+        while timer < 4:
             for tärning in dice:
-                if dice.count(tärning) == count:
+                if dice.count(tärning) >= count:
                     potential = 6 + timer
-                    TillägningAvAlternativ(potential)
+                    tillägning_av_alternativ(potential)
                 elif dice.count(tärning) == 5:
-                    TillägningAvAlternativ(15)
+                    tillägning_av_alternativ(15)
             count = count + 1
             timer = timer + 1
 
         timer = 1
         while timer < 7:
-            antal_tärningar.append(DiceCounter(timer))
+            antal_tärningar.append(dice_counter(timer))
             timer = timer + 1
 
         if antal_tärningar[0] == 1 and antal_tärningar[1] == 1 and antal_tärningar[2] == 1 and antal_tärningar[3] == 1 and antal_tärningar[4] == 1:
-            TillägningAvAlternativ(12)
+            tillägning_av_alternativ(12)
 
 
         elif  antal_tärningar[1] == 1 and antal_tärningar[2] == 1 and antal_tärningar[3] == 1 and antal_tärningar[4] == 1 and antal_tärningar[5] == 1:
-            TillägningAvAlternativ(13)
+            tillägning_av_alternativ(13)
 
 
         potential = 1
@@ -384,11 +396,11 @@ if svar == "j":
 
         if len(par) >= 4:
             if par[0] != par[0 - 1] and len(par) == 4:
-                TillägningAvAlternativ(10)
+                tillägning_av_alternativ(10)
 
             if par[0] != par[0 - 1] and len(par) == 5:
-                TillägningAvAlternativ(10)
-                TillägningAvAlternativ(11)
+                tillägning_av_alternativ(10)
+                tillägning_av_alternativ(11)
 
 
 
@@ -401,15 +413,20 @@ if svar == "j":
         print(choices)
 
         if len(choices) == 0:
-            Punishment()
+            punishment()
         else:
-            sattsning = int(input("Skriv siffran på alternativet du önskar välja: "))
-            ChoiseOfPointCounter(sattsning)
+            midget = True
+            while midget == True:
+                sattsning = int(input("Skriv siffran på alternativet du önskar välja: "))
+                if isinstance(sattsning, int) and sattsning > 16:
+                    midget = False
+            
+            counter_chooser(sattsning)
 
             if sattsning > 0 and sattsning < 6:
                 bonus_countdown = bonus_countdown - 1
                 if bonus_countdown == 0:
-                    BonusCounter()
+                    bonus_counter()
 
         #behöver komma på ett sätt att räkna vad dem kan välja att ta par på om det finns mer än 1 par och liknande.
 
@@ -426,8 +443,6 @@ if svar == "j":
         dice = []
         choices = []
         par = []
-        svar = input("Vill du spela ett spel? j/n: ")
-
             
 
 else:
