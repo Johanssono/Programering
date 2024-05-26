@@ -99,10 +99,17 @@ def punishment():
     sacrifice = input("Skriv siffran på den du vill stryka")
     table.pop(sacrifice)
 
-def type_checker_srt():
-    if isinstance(kasta, str) and kasta == "j" or kasta == "n":
 
-def type_checker_int():
+
+"""
+
+def type_checker_srt(variabel_tempo_str):
+    if isinstance(variabel_tempo_str, str) and variabel_tempo_str == "j" or variabel_tempo_str == "n":
+
+def type_checker_int(variabel_tempo_int, variabel_amount_tempo):
+    if isinstance(variabel_tempo_int, int) and variabel_tempo_int < variabel_amount_tempo 
+
+"""
 
 """Lista med poäng på vilkår 1-6 och används för att räkna ut om spelaren är behörig att få bonusen"""
 points = []
@@ -252,9 +259,9 @@ if svar == "j":
                         while midget == True:
                             print(dice)
                             save = int(input("vilka vill du spara? 1, 2, 3, 4, 5 eller 6: "))
-                            if isinstance(save, int) and save < 7:
+                            if isinstance(save, int) and save < 7 and save > 0:
                                 amount = int(input("Hur många av den valda siffran vill du spara? 1, 2, 3, 4 eller 5: "))
-                                if isinstance(amount, int) and amount < 6:
+                                if isinstance(amount, int) and amount < 6 and amount > 0:
                                     midget = False
    
                         for i in range(len(dice) -1, -1, -1):
@@ -287,16 +294,16 @@ if svar == "j":
 
                     while remove_dice == "j":
                         delete = input("1, 2, 3, 4, 5 eller 6? ")
-                        
-                        amount = int(input("Hur många av den valda siffran vill du spara? 1, 2, 3, 4 eller 5: "))
-                        
-                        for i in range(len(dice) -1, -1, -1):
-                            if dice[i] == delete and amount > 0:
-                                saved.remove(save)
-                                dice.append(save)
-                                amount = amount - 1
-                        
-                        print("sparade tärningar: ", saved)
+                        if isinstance(delete, int) and delete < 7 and delete > 0:                        
+                            amount = int(input("Hur många av den valda siffran vill du spara? 1, 2, 3, 4 eller 5: "))
+                            if isinstance(amount, int) and amount < 6 and amount > 0:
+                                for i in range(len(dice) -1, -1, -1):
+                                    if dice[i] == delete and amount > 0:
+                                        saved.remove(save)
+                                        dice.append(save)
+                                        amount = amount - 1
+                                
+                            print("sparade tärningar: ", saved)
                     
                         midget = True
                         while midget == True:
@@ -418,7 +425,7 @@ if svar == "j":
             midget = True
             while midget == True:
                 sattsning = int(input("Skriv siffran på alternativet du önskar välja: "))
-                if isinstance(sattsning, int) and sattsning > 16:
+                if isinstance(sattsning, int) and sattsning > 16 and sattsning > 0:
                     midget = False
             
             counter_chooser(sattsning)
