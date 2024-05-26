@@ -4,6 +4,26 @@ Logbok
 
 Vecka 21
 --------------
+Jag har arbetat med att göra så att man kan spela flera spelare och har fixat, jag har även gjort så att man inte kan skriva fel på alla variablar som kräver ett input, det med hjälp av länkarna nedan.
+
+Länkar:
+https://stackoverflow.com/questions/3754620/what-does-while-true-mean-in-python
+https://www.geeksforgeeks.org/how-to-use-while-true-in-python/
+https://peps.python.org/pep-0008/#class-names
+https://www.rikardkarlsson.se/programmering/uppgifter.php?url=7100-listor
+https://stackoverflow.com/questions/14667578/check-if-a-number-already-exist-in-a-list-in-python
+https://www.w3schools.com/python/python_ref_string.asp
+https://pythonprinciples.com/blog/check-if-var-is-string/
+https://www.w3schools.com/python/ref_func_isinstance.asp
+https://www.w3schools.com/python/python_classes.asp
+http://programarcadegames.com/index.php?chapter=introduction_to_classes&lang=sv#section_12
+https://www.geeksforgeeks.org/how-to-create-a-list-of-object-in-python-class/
+https://www.youtube.com/watch?v=yYALsys-P_w
+https://www.w3schools.com/python/ref_random_shuffle.asp
+
+Det var rätt svårt att lära sig om hur man använder klassser och så men var väldigt bra.
+
+Jag har även fixat ett avslut så att när spelet är slut så visar den alla spelares poäng och vinnaren och dens poäng.
 
 
 Vecka 20
