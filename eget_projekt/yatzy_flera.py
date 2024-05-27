@@ -9,25 +9,37 @@ class Player:
         """Totala mängden poäng som spelaren har"""
         self.points_total = 0
         """En lista med alla alternativ som spelaren kan välja ifrån, används för att räkna ut valmöjligheter för spelaren"""
-        self.table = {1: "1. Ettor", 2: "2. Tvåor", 3: "3. Treor", 4: "4. Fyror", 5: "5. Femmor", 6: "6. Sexor", 7: "7. Par", 8: "8. Tretal", 9: "9. Fyrtal", 10: "10. Två par", 11: "11. Kåk", 12:"12. Liten stege", 13:"13. Stor Stege", 14: "14. Yatzy", 15: "15. Chans"}
+        self.table = {1: "Ettor", 2: "Tvåor", 3: "Treor", 4: "Fyror", 5: "Femmor", 6: "Sexor", 7: "Par", 8: "Tretal", 9: "Fyrtal", 10: "Två par", 11: "Kåk", 12:"Liten stege", 13:"Stor Stege", 14: "Yatzy", 15: "Chans"}
 
 
-#Ändra så att alla variabler delear 1 språk och gör så att det inte är så fult när man kör print(table)
+#Behöver göra så att man inte kan välja mer än dem alternativ man har
 
 #behöver också jöra så det inte ser så hämskt ut när man printar vem som börjar spela och alla deras "stats"
 
-def tillägning_av_alternativ(potential):
+def appropriation_of_options(potential, testö):
     """Lägger till alternativ i listan choices där spelaren sedan väljer vilkår att lägga poängen på."""
-    for alternativ in participant.table:
-        if alternativ == potential:
+    for option in participant.table:
+        if option == potential:
             if participant.table[potential] not in choices:
+                amount_adder(testö)
                 choices.append(participant.table[potential])
     return potential
 
-def dice_counter(tärning):
+
+
+
+
+def amount_adder(testö):
+    choices.append(testö)
+    testö = testö + 1
+    return testö
+
+
+
+def dice_counter(die):
     """Räknar ut antalet av varge tärning i listan"""
-    antal = dice.count(tärning)
-    return antal
+    Quantity = dice.count(die)
+    return Quantity
 
     #Måste ändra om och returna ett svar och spara det svaret i en lista.
 
@@ -40,70 +52,72 @@ def yatzy_counter():
     """Används för att räkna ut apelarens poäng vid val av vilkår 14"""
     participant.points_total = participant.points_total + 50
 
-def smal_point_counter(sattsning, participant):
+def smal_point_counter(investment, participant):
     #borde ientiligen inte använda "global", måste komma på ett annat sätt att ge funktionerna tillgång till listorna som dem arbetar med.
     """Funktionen räknar ut poängen om spelaren har valt att lägga poängen på vilkår 1-6 och lägger till dem i listan med poäng"""
-    for tärning in dice:
-        if tärning == sattsning:
-            participant.points = participant.points + tärning
-            participant.points_total = participant.points_total + tärning
+    for die in dice:
+        if die == investment:
+            participant.points = participant.points + die
+            participant.points_total = participant.points_total + die
             #points_total räknas som en integer och kan inte använda sig av kommandot append.
-    if sattsning == 14:
+    if investment == 14:
         yatzy_counter()
 
-def number_counter(val):
+def number_counter(selection):
     """Funktionen räknar antalet av varge siffra i listan med par och används för att räkna ut spelarens poäng beroende på val innom vilkåren 7-9"""
-    for siffra in par:
-        if par.count(siffra) >= val and siffra not in second_choice:
-            if val == 2:
-                second_choice.append(siffra)
+    for digit in pair:
+        if pair.count(digit) >= selection and digit not in second_choice:
+            if selection == 2:
+                second_choice.append(digit)
             else:
-                return siffra
-    if val == 2:
+                return digit
+    if selection == 2:
         return second_choice
 
-def par_counter(sattsning, participant, second_choice):
+def pair_counter(investment, participant, second_choice):
     """Funktionen räknar ut poängen om spelaren har valt att lägga poängen på vilkår 7 och lägger till dem i listan med poäng"""
     number_counter(2)
     if len(second_choice) > 1:
-        midget = True
-        while midget == True:
+        checker = True
+        while checker == True:
             print(second_choice)
-            sattsning_2 = int(input("Skriv siffran som du vill ha par på: "))
-            if sattsning_2 in second_choice:
-                midget = False
-        participant.points_total = participant.points_total + sattsning_2 * 2
+            investment_2 = int(input("Skriv siffran som du vill ha par på: "))
+            if investment_2 in second_choice:
+                checker = False
+        participant.points_total = participant.points_total + investment_2 * 2
     else:
         participant.points_total = participant.points_total + second_choice[0] * 2            
 
 
-def average_point_counter(sattsning, participant):
+def average_point_counter(investment, participant):
     """Funktionen räknar ut pängenen om spelaren valt att lägga poängen på vilkår 8 eller 9 och legger till det i listan med poäng"""
-    tal = sattsning - 5
-    participant.points_total = participant.points_total + number_counter(tal) * tal
+    number = investment - 5
+    participant.points_total = participant.points_total + number_counter(tal) * number
 
-def big_point_counter(sattsning, participant):
+def big_point_counter(investment, participant):
     """Funktionen räknar ut poängen om spelaren har valt att lägga poängen på vilkår 10-15 och lägger till dem i listan med poäng """
-    if sattsning == 10:
-        participant.points_total = participant.points_total + par[0] * 2 + par[-1] * 2
+    if investment == 10:
+        participant.points_total = participant.points_total + pair[0] * 2 + pair[-1] * 2
         
-    elif sattsning > 10 and sattsning < 12 or sattsning == 15:
-        participant.points_total = participant.points_total + sum(par)
+    elif investment > 10 and investment < 12 or investment == 15:
+        participant.points_total = participant.points_total + sum(pair)
+    
+    
     
     
 
-def counter_chooser(sattsning):
+def counter_chooser(investment):
     """Funktionen används för att räkna ut vilken räknefunktion som ska användas beroende på vilket vilkår spelaren valde 
     och tar bort detta alternativet så det inte kan väljas igen"""
-    participant.table.pop(sattsning)
-    if sattsning <=6:
-        smal_point_counter(sattsning, participant)
-    elif sattsning == 7:
-        par_counter(sattsning, participant, second_choice)
-    elif sattsning  == 8 or sattsning == 9:
-        average_point_counter(sattsning, participant)
-    elif sattsning > 9:
-        big_point_counter(sattsning, participant)
+    participant.table.pop(investment)
+    if investment <=6:
+        smal_point_counter(investment, participant)
+    elif investment == 7:
+        pair_counter(investment, participant, second_choice)
+    elif investment  == 8 or investment == 9:
+        average_point_counter(investment, participant)
+    elif investment > 9:
+        big_point_counter(investment, participant)
 
 def punishment():
     """Funktionen straffar spelaren om spelaren inte har tärningar som passar med något kvarstående alternativ, 
@@ -111,6 +125,11 @@ def punishment():
     print(participant.table)
     sacrifice = input("Skriv siffran på den du vill stryka")
     participant.table.pop(sacrifice)
+
+
+###skriv en deffinition som kollar om den valda sattnsningen fungerar, om det inte gör det be dem välja sattsning igen.
+
+
 
 """
 
@@ -125,42 +144,42 @@ if isinstance(variabel_tempo_int, int) and variabel_tempo_int < variabel_amount_
 "En lista på spelare"
 dice = []
 """En lista på antalet tärningar spelaren kan kasta efter att ha sparat tärningar"""
-antal_tärningar = []
-antal = 0
-throw = 3
+number_of_dice = []
+Quantity = 0
+throws = 3
 """En lista på sparade tärningar mellan kast"""
 saved = []
 """EN lista med alternativen som spelaren har att välja mellan"""
 choices = []
 second_choice = []
-par = []
+pair = []
 
 """En nedräkning för att avgöra om spelaren är behörig till en bonus"""
 bonus_countdown = 6
 
-resultat = []
+player = []
 
-spelare = []
+testö = 1
 
-midget = True
+checker = True
 
-while midget == True:
+while checker == True:
     antal_spelare = int(input("Skriv in antalet spelare: "))
     if isinstance(antal_spelare, int):
-        midget = False
+        checker = False
 
 while antal_spelare > 0:
     player_name = input("skriv namn på alla spelare. En spelare i taget tack, spelar-1 kommer slumpmässigt väljas ut: ")
     player_name = Player(player_name)
-    spelare.append(player_name)
+    player.append(player_name)
     antal_spelare = antal_spelare - 1
-    random.shuffle(spelare)
+    random.shuffle(player)
 
 
 game_time = True
 
 while game_time == True:
-    for participant in spelare:
+    for participant in player:
         print(participant.name, participant.points, participant.points_total, participant.table, sep='')
 
 
@@ -177,19 +196,19 @@ while game_time == True:
 
 
 
-            while throw > 0:
+            while throws > 0:
 
-                kasta = "k"
-                while kasta !="j" and kasta !="n":
-                    kasta = input("Vill du kasta tärningarna? j/n: ")
+                throw = "k"
+                while throw !="j" and throw !="n":
+                    throw = input("Vill du kasta tärningarna? j/n: ")
                 
-                while kasta == "j":
-                    while antal < 5:
-                        tärning = random.randrange(1, 7)
-                        dice.append(tärning)
-                        antal = antal + 1
+                while throw == "j":
+                    while Quantity < 5:
+                        die = random.randrange(1, 7)
+                        dice.append(die)
+                        Quantity = Quantity + 1
 
-                    if throw > 1:
+                    if throws > 1:
                     
                         print(dice)
 
@@ -199,14 +218,14 @@ while game_time == True:
 
                         while save_dice == "j":
 
-                            midget = True
-                            while midget == True:
+                            checker = True
+                            while checker == True:
                                 print(dice)
                                 save = int(input("vilka vill du spara? 1, 2, 3, 4, 5 eller 6: "))
                                 if isinstance(save, int) and save < 7 and save > 0:
                                     amount = int(input("Hur många av den valda siffran vill du spara? 1, 2, 3, 4 eller 5: "))
                                     if isinstance(amount, int) and amount < 6 and amount > 0:
-                                        midget = False
+                                        checker = False
 
                             for i in range(len(dice) -1, -1, -1):
                                 if dice[i] == save and amount > 0:
@@ -222,19 +241,19 @@ while game_time == True:
                                                             
                             print(dice)
                             if len(saved) > 0:
-                                midget = True
-                                while midget == True:
+                                checker = True
+                                while checker == True:
                                     save_dice = input("Vill du spara några fler tärningar? j/n: ")
                                     if isinstance(save_dice, str) and save_dice == "j" or save_dice == "n":
-                                        midget = False
+                                        checker = False
 
                         print("sparade tärningar: ", saved)
                         
-                        midget = True
-                        while midget == True:
+                        checker = True
+                        while checker == True:
                             remove_dice = input("Vill du ta bort några tärningar? j/n: ")
                             if isinstance(remove_dice, str) and remove_dice == "j" or remove_dice == "n":
-                                midget = False
+                                checker = False
 
                         while remove_dice == "j":
                             delete = input("1, 2, 3, 4, 5 eller 6? ")
@@ -249,34 +268,34 @@ while game_time == True:
                                     
                                 print("sparade tärningar: ", saved)
                         
-                            midget = True
-                            while midget == True:
+                            checker = True
+                            while checker == True:
                                 remove_dice = input("Vill du ta bort några fler tärningar? j/n: ")
                                 if isinstance(remove_dice, str) and remove_dice == "j" or remove_dice == "n":
-                                    midget = False
+                                    checker = False
                         dice = []
 
                         dice.extend(saved)
 
                         print(dice)
-                        antal = len(dice)
-                        throw = throw - 1
+                        Quantity = len(dice)
+                        throws = throws - 1
 
                         saved = []
                         
-                        midget = True
-                        while midget == True:
-                            kasta = input("Vill du kasta tärningarna? j/n: ")
-                            if isinstance(kasta, str) and kasta == "j" or kasta == "n":
-                                midget = False
+                        checker = True
+                        while checker == True:
+                            throw = input("Vill du kasta tärningarna? j/n: ")
+                            if isinstance(throw, str) and throw == "j" or throw == "n":
+                                checker = False
                     
                     else:
-                        throw = throw - 1
+                        throws = throws - 1
                         dice.sort()
                         print(dice)
                         print(participant.table)
                         print()
-                        kasta = "n"
+                        throw = "n"
                         
 
         #En lista med alla olika poängalternativ,
@@ -294,10 +313,10 @@ while game_time == True:
             potential_choice = dice[0]
 
             while potential_choice < 7:
-                for tärning in dice:
-                    if tärning == potential_choice:
+                for die in dice:
+                    if die == potential_choice:
                         #tillägning_av_alternativ Python PEP: https://peps.python.org/pep-0008/
-                        tillägning_av_alternativ(potential_choice)
+                        appropriation_of_options(potential_choice, testö)
                 potential_choice = potential_choice + 1
 
 
@@ -312,26 +331,26 @@ while game_time == True:
             count = 2
 
             while timer < 4:
-                for tärning in dice:
-                    if dice.count(tärning) >= count:
+                for die in dice:
+                    if dice.count(die) >= count:
                         potential = 6 + timer
-                        tillägning_av_alternativ(potential)
-                    elif dice.count(tärning) == 5:
-                        tillägning_av_alternativ(15)
+                        appropriation_of_options(potential, testö)
+                    elif dice.count(die) == 5:
+                        appropriation_of_options(15, testö)
                 count = count + 1
                 timer = timer + 1
 
             timer = 1
             while timer < 7:
-                antal_tärningar.append(dice_counter(timer))
+                number_of_dice.append(dice_counter(timer))
                 timer = timer + 1
 
-            if antal_tärningar[0] == 1 and antal_tärningar[1] == 1 and antal_tärningar[2] == 1 and antal_tärningar[3] == 1 and antal_tärningar[4] == 1:
-                tillägning_av_alternativ(12)
+            if number_of_dice[0] == 1 and number_of_dice[1] == 1 and number_of_dice[2] == 1 and number_of_dice[3] == 1 and number_of_dice[4] == 1:
+                appropriation_of_options(12, testö)
 
 
-            elif  antal_tärningar[1] == 1 and antal_tärningar[2] == 1 and antal_tärningar[3] == 1 and antal_tärningar[4] == 1 and antal_tärningar[5] == 1:
-                tillägning_av_alternativ(13)
+            elif  number_of_dice[1] == 1 and number_of_dice[2] == 1 and number_of_dice[3] == 1 and number_of_dice[4] == 1 and number_of_dice[5] == 1:
+                appropriation_of_options(13, testö)
 
 
             potential = 1
@@ -339,24 +358,24 @@ while game_time == True:
             while potential < 7:
                 räkning = dice.count(potential)
                 if räkning > 1:
-                    for tärning in dice:
-                        if tärning == potential:
-                            par.append(potential)
+                    for die in dice:
+                        if die == potential:
+                            pair.append(potential)
                 potential = potential + 1
 
 
-            if len(par) >= 4:
-                if par[0] != par[0 - 1] and len(par) == 4:
-                    tillägning_av_alternativ(10)
+            if len(pair) >= 4:
+                if pair[0] != pair[0 - 1] and len(pair) == 4:
+                    appropriation_of_options(10, testö)
 
-                if par[0] != par[0 - 1] and len(par) == 5:
-                    tillägning_av_alternativ(10)
-                    tillägning_av_alternativ(11)
+                if pair[0] != pair[0 - 1] and len(pair) == 5:
+                    appropriation_of_options(10, testö)
+                    appropriation_of_options(11, testö)
 
 
 
-            for alternativ in participant.table:
-                if alternativ == 15:
+            for option in participant.table:
+                if option == 15:
                     if participant.table[15] not in choices:
                         choices.append(participant.table[15])            
             
@@ -366,61 +385,16 @@ while game_time == True:
             if len(choices) == 0:
                 punishment()
             else:
-                midget = True
-                while midget == True:
-                    sattsning = int(input("Skriv siffran på alternativet du önskar välja: "))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                checker = True
+                while checker == True:
+                    investment = int(input("Skriv siffran på alternativet du önskar välja: "))
         #måste komma på ett sätt som spelar om loopen om man inte valt en siffra på dem alternativ man har
-
-
-
-
-
-
-
-
-
-
-
-                    if isinstance(sattsning, int):
-                        midget = False
+                    if isinstance(investment, int):
+                        checker = False
                 
-                counter_chooser(sattsning)
+                counter_chooser(investment)
 
-                if sattsning > 0 and sattsning < 6:
+                if investment > 0 and investment < 6:
                     bonus_countdown = bonus_countdown - 1
                     if bonus_countdown == 0:
                         bonus_counter()
@@ -433,17 +407,17 @@ while game_time == True:
 
             dice = []
             choices = []
-            par = []
-            if len(spelare[-1].table) == 0:
+            pair = []
+            if len(player[-1].table) == 0:
                 game_time = False   
 
 highest_points = player[0].points_total
 winner = ""
 
-for participant in spelare:
+for participant in player:
     if participant.points_total > highest_points:
         highest_points = participant.points_total
-        winner = spelare[participant.name]
+        winner = player[participant.name]
     print(participant.points_total)
 
 print("vinnaren är: ", winner, "med", highest_points, "poäng")
