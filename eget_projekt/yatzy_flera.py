@@ -22,6 +22,7 @@ def count_of_options(potential):
             if participant.table[potential] not in parikng_lot:
                 parikng_lot.append(participant.table[potential])
     return potential
+    
 
 
 def appropriation_of_options(parikng_lot):
