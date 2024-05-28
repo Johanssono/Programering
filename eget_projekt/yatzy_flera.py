@@ -101,6 +101,7 @@ def counter_chooser(investment):
     """Funktionen används för att räkna ut vilken räknefunktion som ska användas beroende på vilket vilkår spelaren valde 
     och tar bort detta alternativet så det inte kan väljas igen"""
     participant.table.pop(investment)
+    print(participant.table)
     if investment <=6:
         smal_point_counter(investment, participant)
     elif investment == 7:
@@ -382,8 +383,6 @@ while game_time == True:
                     count_of_options(10)
                     count_of_options(11)
 
-
-
             for option in participant.table:
                 if option == 15:
                     if participant.table[15] not in choices:
@@ -421,6 +420,9 @@ while game_time == True:
             dice = []
             choices = {}
             pair = []
+            number_of_dice = []
+            parikng_lot = []
+            second_choice = []
             if len(player[-1].table) == 0:
                 game_time = False   
 
