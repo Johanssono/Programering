@@ -6,6 +6,9 @@ Vecka 22
 --------------
 Jag har nu fixat så att koden inte krashar när man skriver in fel och så har jag gjort så att man kan spela fler än 1 och så att koden displayar allas poäng i slutet och displayar vem som vann och hur mycket poäng som vinnaren har.
 
+Jag använde mig av isnumeric för att uppnå denna mängd integritet på koden.
+
+
 
 Vecka 21
 --------------
