@@ -2,6 +2,11 @@ Logbok
 ==============
 
 
+Vecka 22
+--------------
+Jag har nu fixat så att koden inte krashar när man skriver in fel och så har jag gjort så att man kan spela fler än 1 och så att koden displayar allas poäng i slutet och displayar vem som vann och hur mycket poäng som vinnaren har.
+
+
 Vecka 21
 --------------
 Jag har arbetat med att göra så att man kan spela flera spelare och har fixat, jag har även gjort så att man inte kan skriva fel på alla variablar som kräver ett input, det med hjälp av länkarna nedan.
