@@ -10,6 +10,8 @@ class Player:
         self.points_total = 0
         """En lista med alla alternativ som spelaren kan välja ifrån, används för att räkna ut valmöjligheter för spelaren"""
         self.table = {1: "Ettor", 2: "Tvåor", 3: "Treor", 4: "Fyror", 5: "Femmor", 6: "Sexor", 7: "Par", 8: "Tretal", 9: "Fyrtal", 10: "Två par", 11: "Kåk", 12: "Liten stege", 13: "Stor Stege", 14: "Yatzy", 15: "Chans"}
+        self.table_index_counter = ("Ettor", "Tvåor", "Treor", "Fyror", "Femmor", "Sexor", "Par", "Tretal", "Fyrtal", "Två par", "Kåk", "Liten stege", "Stor Stege", "Yatzy", "Chans")
+
 #Behöver göra så att man den frågar om frågan om man skriver en bokstav när den ber om en siffra
 
 
@@ -85,7 +87,7 @@ def pair_counter(investment, participant, second_choice):
 def average_point_counter(investment, participant):
     """Funktionen räknar ut pängenen om spelaren valt att lägga poängen på vilkår 8 eller 9 och legger till det i listan med poäng"""
     number = investment - 5
-    participant.points_total = participant.points_total + number_counter(tal) * number
+    participant.points_total = participant.points_total + number_counter(number) * number
 
 def big_point_counter(investment, participant):
     """Funktionen räknar ut poängen om spelaren har valt att lägga poängen på vilkår 10-15 och lägger till dem i listan med poäng """
@@ -94,10 +96,6 @@ def big_point_counter(investment, participant):
         
     elif investment > 10 and investment < 12 or investment == 15:
         participant.points_total = participant.points_total + sum(pair)
-    
-    
-    
-    
 
 def counter_chooser(investment):
     """Funktionen används för att räkna ut vilken räknefunktion som ska användas beroende på vilket vilkår spelaren valde 
@@ -203,7 +201,7 @@ while game_time == True:
 
                 throw = "k"
                 while throw !="j" and throw !="n":
-                    throw = input("Vill du kasta tärningarna? j/n: ")
+                    throw = input("Skriv 'j' för att kasta tärningarna: ")
                 
                 while throw == "j":
                     while Quantity < 5:
@@ -298,8 +296,8 @@ while game_time == True:
                         
                         checker = True
                         while checker == True:
-                            throw = input("Vill du kasta tärningarna? j/n: ")
-                            if isinstance(throw, str) and throw == "j" or throw == "n":
+                            throw = input("Skriv 'j' för att kasta tärningarna: ")
+                            if isinstance(throw, str) and throw == "j":
                                 checker = False
                     
                     else:
@@ -321,7 +319,6 @@ while game_time == True:
 
         #När ett alternativ är valt eller struket, ska listan ta bort detta alternativ och spara det i den slutgiltiga listan.
         #Sedan ska spelaren presenteras med den slutgiltiga listan och summan av poängen.
-
             print(dice)
             potential_choice = dice[0]
 
@@ -400,11 +397,13 @@ while game_time == True:
                 checker = True
                 while checker == True:
                     print(choices)
-                    investment = input("Skriv siffran på alternativet du önskar välja: ")
-                    if investment.isnumeric():
-                        investment = int(investment)
-                        if isinstance(investment, int) and investment <= len(choices):
+                    placement = input("Skriv siffran på alternativet du önskar välja: ")
+                    if placement.isnumeric():
+                        placement = int(placement)
+                        if isinstance(placement, int) and placement <= len(choices):
                             checker = False
+                            stake = choices.get(placement)
+                            investment = participant.table_index_counter.index(stake) + 1
                 
                 counter_chooser(investment)
 
