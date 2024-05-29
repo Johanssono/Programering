@@ -337,7 +337,7 @@ while game_time == True:
         #detta på grund av att i listan med alternativ kommer 
 
 
-
+            dice = [1, 1, 1, 1, 1]
 
             timer = 1
             count = 2
@@ -347,8 +347,8 @@ while game_time == True:
                     if dice.count(die) >= count:
                         potential = 6 + timer
                         count_of_options(potential)
-                    elif dice.count(die) == 5:
-                        count_of_options(15)
+                    if dice.count(die) == 5:
+                        count_of_options(14)
                 count = count + 1
                 timer = timer + 1
 
