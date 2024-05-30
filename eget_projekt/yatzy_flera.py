@@ -243,25 +243,27 @@ while game_time == True:
                                 checker = True
                                 while checker == True:
                                     delete = input("1, 2, 3, 4, 5, 6 eller 7 för att ta bort alla tärningar? ")
-                                    if delete.isnumeric():
-                                        delete = int(delete)
-                                        if isinstance(delete, int) and delete < 8 and delete > 0:
-                                            if delete == 7:
-                                                dice = saved
-                                                saved = []
-                                                remove_dice = "n"
-                                                checker = False
-                                            while checker == True:                    
-                                                amount = input("Hur många av den valda siffran du vill ta bort? 1, 2, 3, 4 eller 5: ")
-                                                if amount.isnumeric():
-                                                    amount = int(amount)
-                                                    if isinstance(amount, int) and amount < 6 and amount > 0:
-                                                        for i in range(len(saved) -1, -1, -1):
-                                                            if saved[i] == delete and amount > 0:
-                                                                saved.remove(delete)
-                                                                dice.append(delete)
-                                                                amount = amount - 1
-                                                                checker = False
+                                    for die in saved:
+                                        if die == delete:
+                                            if delete.isnumeric():
+                                                delete = int(delete)
+                                                if isinstance(delete, int) and delete < 8 and delete > 0:
+                                                    if delete == 7:
+                                                        dice = saved
+                                                        saved = []
+                                                        remove_dice = "n"
+                                                        checker = False
+                                                    while checker == True:                    
+                                                        amount = input("Hur många av den valda siffran du vill ta bort? 1, 2, 3, 4 eller 5: ")
+                                                        if amount.isnumeric():
+                                                            amount = int(amount)
+                                                            if isinstance(amount, int) and amount < 6 and amount > 0:
+                                                                for i in range(len(saved) -1, -1, -1):
+                                                                    if saved[i] == delete and amount > 0:
+                                                                        saved.remove(delete)
+                                                                        dice.append(delete)
+                                                                        amount = amount - 1
+                                                                        checker = False
                                                 
                                             print("sparade tärningar: ", saved)
                                 if len(saved) > 0:
