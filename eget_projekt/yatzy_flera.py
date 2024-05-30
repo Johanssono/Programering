@@ -374,7 +374,7 @@ while game_time == True:
                 
                 counter_chooser(investment)
 
-                if investment > 0 and investment < 6:
+                if investment > 0 and investment < 7:
                     bonus_countdown = bonus_countdown - 1
                     if bonus_countdown == 0:
                         bonus_counter()
