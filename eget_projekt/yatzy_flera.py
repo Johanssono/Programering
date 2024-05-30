@@ -182,7 +182,6 @@ while game_time == True:
                         Quantity = Quantity + 1
 
                     if throws > 1:
-                        dice = [6, 6, 6, 6, 6]
                         print(dice)
 
                         save_dice = "k"
@@ -290,6 +289,7 @@ while game_time == True:
                     
                     else:
                         dice.extend(saved)
+                        saved = []
                         throws = throws - 1
                         dice.sort()
                         print(dice)
