@@ -47,8 +47,7 @@ def smal_point_counter(investment, participant):
         if die == investment:
             participant.points = participant.points + die
             participant.points_total = participant.points_total + die
-    if investment == 14:
-        yatzy_counter()
+
 
 def number_counter(selection):
     """Funktionen räknar antalet av varge siffra i listan med par och används för att räkna ut spelarens poäng beroende på val innom vilkåren 7-9"""
@@ -88,8 +87,14 @@ def big_point_counter(investment, participant):
     if investment == 10:
         participant.points_total = participant.points_total + pair[0] * 2 + pair[-1] * 2
         
-    elif investment > 10 and investment < 12 or investment == 15:
+    elif investment == 11:
         participant.points_total = participant.points_total + sum(pair)
+
+    elif investment == 12 or investment == 13 or investment == 15:
+        participant.points_total = participant.points_total + sum(dice)
+    
+    elif investment == 14:
+        yatzy_counter()
 
 def counter_chooser(investment):
     """Funktionen används för att räkna ut vilken räknefunktion som ska användas beroende på vilket vilkår spelaren valde 
@@ -114,10 +119,9 @@ def punishment():
         sacrifice = input("Skriv siffran på den du vill stryka: ")
         if sacrifice.isnumeric():
             sacrifice = int(sacrifice)
-            if isinstance(sacrifice, int) and sacrifice <= len(participant.table):
+            if sacrifice in participant.table:
                 participant.table.pop(sacrifice)
                 checker = False
-
 dice = []
 number_of_dice = []
 Quantity = 0
@@ -178,7 +182,7 @@ while game_time == True:
                         Quantity = Quantity + 1
 
                     if throws > 1:
-                    
+                        dice = [6, 6, 6, 6, 6]
                         print(dice)
 
                         save_dice = "k"
@@ -190,12 +194,17 @@ while game_time == True:
                             checker = True
                             while checker == True:
                                 print(dice)
-                                save = input("vilka vill du spara? 1, 2, 3, 4, 5 eller 6: ")
+                                save = input("vilka vill du spara? 1, 2, 3, 4, 5, 6 eller 7 för att spara alla tärningar: ")
                                 if save.isnumeric():
                                     save = int(save)
-                                    if isinstance(save, int) and save < 7 and save > 0:
+                                    if isinstance(save, int) and save < 8 and save > 0:
+                                        if save == 7:
+                                            saved = dice
+                                            dice = []
+                                            save_dice = "n"
+                                            checker = False
                                         while checker == True:
-                                            amount = input("Hur många av den valda siffran vill du spara? 1, 2, 3, 4 eller 5: ")
+                                            amount = input("Hur många av den valda siffran du vill spara? 1, 2, 3, 4 eller 5: ")
                                             if amount.isnumeric():
                                                 amount = int(amount)
                                                 if isinstance(amount, int) and amount < 6 and amount > 0:
@@ -213,7 +222,7 @@ while game_time == True:
                                     alla bjekt av samma värde tas bort oavsätt index"""
                                                             
                             print(dice)
-                            if len(saved) > 0:
+                            if len(dice) > 0:
                                 checker = True
                                 while checker == True:
                                     save_dice = input("Vill du spara några fler tärningar? j/n: ")
@@ -228,46 +237,60 @@ while game_time == True:
                                 remove_dice = input("Vill du ta bort några tärningar? j/n: ")
                                 if isinstance(remove_dice, str) and remove_dice == "j" or remove_dice == "n":
                                     checker = False
+                                if remove_dice == "n" and len(saved) == 5:
+                                    throws = 0
 
                             while remove_dice == "j":
-                                delete = input("1, 2, 3, 4, 5 eller 6? ")
-                                if delete.isnumeric():
-                                    delete = int(delete)
-                                    if isinstance(delete, int) and delete < 7 and delete > 0:                        
-                                        amount = input("Hur många av den valda siffran vill du spara? 1, 2, 3, 4 eller 5: ")
-                                        if amount.isnumeric():
-                                            amount = int(amount)
-                                            if isinstance(amount, int) and amount < 6 and amount > 0:
-                                                for i in range(len(dice) -1, -1, -1):
-                                                    if dice[i] == delete and amount > 0:
-                                                        saved.remove(save)
-                                                        dice.append(save)
-                                                        amount = amount - 1
-                                            
-                                        print("sparade tärningar: ", saved)
-                            
                                 checker = True
                                 while checker == True:
-                                    remove_dice = input("Vill du ta bort några fler tärningar? j/n: ")
-                                    if isinstance(remove_dice, str) and remove_dice == "j" or remove_dice == "n":
-                                        checker = False
-                        dice = []
-
-                        dice.extend(saved)
-
-                        print(dice)
-                        Quantity = len(dice)
-                        throws = throws - 1
-
-                        saved = []
+                                    delete = input("1, 2, 3, 4, 5, 6 eller 7 för att ta bort alla tärningar? ")
+                                    if delete.isnumeric():
+                                        delete = int(delete)
+                                        if isinstance(delete, int) and delete < 8 and delete > 0:
+                                            if delete == 7:
+                                                dice = saved
+                                                saved = []
+                                                remove_dice = "n"
+                                                checker = False
+                                            while checker == True:                    
+                                                amount = input("Hur många av den valda siffran du vill ta bort? 1, 2, 3, 4 eller 5: ")
+                                                if amount.isnumeric():
+                                                    amount = int(amount)
+                                                    if isinstance(amount, int) and amount < 6 and amount > 0:
+                                                        for i in range(len(saved) -1, -1, -1):
+                                                            if saved[i] == delete and amount > 0:
+                                                                print(saved[i])
+                                                                saved.remove(delete)
+                                                                dice.append(delete)
+                                                                amount = amount - 1
+                                                                checker = False
+                                                
+                                            print("sparade tärningar: ", saved)
+                                if len(saved) > 0:
+                                    checker = True
+                                    while checker == True:
+                                        remove_dice = input("Vill du ta bort några fler tärningar? j/n: ")
+                                        if isinstance(remove_dice, str) and remove_dice == "j" or remove_dice == "n":
+                                            checker = False
                         
-                        checker = True
-                        while checker == True:
-                            throw = input("Skriv 'j' för att kasta tärningarna: ")
-                            if isinstance(throw, str) and throw == "j":
-                                checker = False
+                        if len(dice) > 0:
+
+                            dice = []
+                            dice.extend(saved)
+                            print(dice)
+                            Quantity = len(dice)
+                            throws = throws - 1
+
+                            saved = []
+                        
+                            checker = True
+                            while checker == True:
+                                throw = input("Skriv 'j' för att kasta tärningarna: ")
+                                if isinstance(throw, str) and throw == "j":
+                                    checker = False
                     
                     else:
+                        dice.extend(saved)
                         throws = throws - 1
                         dice.sort()
                         print(dice)
@@ -292,8 +315,8 @@ while game_time == True:
                     if dice.count(die) >= count:
                         potential = 6 + timer
                         count_of_options(potential)
-                    elif dice.count(die) == 5:
-                        count_of_options(15)
+                    if dice.count(die) == 5:
+                        count_of_options(14)
                 count = count + 1
                 timer = timer + 1
 
