@@ -259,7 +259,6 @@ while game_time == True:
                                                     if isinstance(amount, int) and amount < 6 and amount > 0:
                                                         for i in range(len(saved) -1, -1, -1):
                                                             if saved[i] == delete and amount > 0:
-                                                                print(saved[i])
                                                                 saved.remove(delete)
                                                                 dice.append(delete)
                                                                 amount = amount - 1
